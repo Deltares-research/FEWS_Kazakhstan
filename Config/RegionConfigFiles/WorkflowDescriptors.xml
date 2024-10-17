@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
+	<!--Import & Process workflows-->
+	<workflowDescriptor id="Import_Hydro_Observations" name="Import Hydrological Observations" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_Forecasts" name="Import weather forecasts (GFS)" visible="true" forecast="false" autoApprove="false" allowApprove="false">
+		<cardinalTimeStep timeZone="GMT" unit="day"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="Import_Ensemble_Forecasts" name="Import weather ensembles(GEFS)" visible="true" forecast="false" autoApprove="false" allowApprove="false">
+		<cardinalTimeStep timeZone="GMT" unit="day"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="Import_EarthObservation" name="Import satellite data (GPM)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_GRDC" name="Import GRDC station data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_GSOD" name="Import GSOD station data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_GSMAP_Server" name="Import GSMAP data (from Server)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_GSOD_Server" name="Import GSOD station data (from Server)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_OpenMeteo" name="Import OpenMeteo historical data (CSV)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_KazRadar" name="Import Radar data (TIF Format)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Process_Operational_Grids" name="Process Operational Gridded Meteo Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Export_Operational_Grids" name="Export GFS Forecasts" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Copy_GFS_Grid" name="Copy GFS Grid" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Modify_GFS_Grid" name="Modify GFS Grid" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="Talsim_forecast" name="Run Talsim Model (Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="Talsim_historic" name="Run Talsim Model (Historic)" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<rootNode>
+		<node name="Import">
+			<workflowId>Import_GRDC</workflowId>
+			<workflowId>Import_GSOD_Server</workflowId>
+			<workflowId>Import_GSMAP_Server</workflowId>
+			<workflowId>Import_Forecasts</workflowId>
+			<workflowId>Import_EarthObservation</workflowId>
+			<workflowId>Import_KazRadar</workflowId>
+			<workflowId>Import_Ensemble_Forecasts</workflowId>
+			<workflowId>Import_GSOD</workflowId>
+			<workflowId>Import_OpenMeteo</workflowId>
+		</node>
+		<node name="Process">
+			<workflowId>Process_Operational_Grids</workflowId>
+			<workflowId>Export_Operational_Grids</workflowId>
+			<workflowId>Copy_GFS_Grid</workflowId>
+			<workflowId>Modify_GFS_Grid</workflowId>
+		</node>
+		<node name="Model">
+			<workflowId>Talsim_historic</workflowId>			
+			<workflowId>Talsim_forecast</workflowId>
+		</node>
+	</rootNode>
+</workflowDescriptors>

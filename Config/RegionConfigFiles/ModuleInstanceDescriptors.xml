@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!--Imports and Process-->
+	<moduleInstanceDescriptor id="Import_radar_file">
+	<description>imports TIF files of Radar</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GFS_Server">
+		<description>Import GFS from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GEFS_Server">
+		<description>Import GEFS from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GPM_Server">
+		<description>Import GPM imerg from ftp server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GSMAP_Server">
+		<description>Import GSMAP from ftp server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_OpenMeteo">
+		<description>Import CSV File from OpenMeteo</description>
+	</moduleInstanceDescriptor>
+<!--	<moduleInstanceDescriptor id="Import_E2O_Server">
+		<description>Import Earth2Observe from OpenDap server</description>
+	</moduleInstanceDescriptor>-->
+<!--	<moduleInstanceDescriptor id="Import_WaveWatch3_Server">
+		<description>Import GFS from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_HYCOM_SalTemp_Server">
+		<description>Import HYCOM from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_HYCOM_SSH_Server">
+		<description>Import HYCOM from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_HYCOM_Currents_Server">
+		<description>Import HYCOM from OpenDap server</description>
+	</moduleInstanceDescriptor>-->
+	<moduleInstanceDescriptor id="Import_Station">
+		<description>Import Station data from xxx server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GRDC">
+		<description>Import Station data from GRDC (File)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GSOD">
+		<description>Import Station data from GSOD (File)</description>
+	</moduleInstanceDescriptor>
+		<moduleInstanceDescriptor id="Import_GSOD_Server">
+		<description>Import Station data from GSOD (Server)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Preprocess_GPM">
+		<description>Preprocess Meteo GPM series</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Preprocess_GSMAP">
+		<description>Preprocess Meteo GSMAP series</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Process_Operational_Grids">
+		<description>Process operational Meteo grids</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Process_Operational_Ensemble_Statistics">
+		<description>Process operational Meteo grids</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Catchments_Export">
+		<description>Export Meuse catchment averages</description>
+	</moduleInstanceDescriptor>
+	<!--Modifiers-->
+	<moduleInstanceDescriptor id="Copy_GFS"/>
+	<moduleInstanceDescriptor id="Modify_GFS"/>
+	<!--Models-->
+	<moduleInstanceDescriptor id="Talsim_ModuleConfig_forecast"/>
+	<moduleInstanceDescriptor id="Meteo_Preprocess_Talsim_forecast"/>
+	<moduleInstanceDescriptor id="Talsim_ModuleConfig_historic"/>
+	<moduleInstanceDescriptor id="Meteo_Preprocess_Talsim_historic"/>
+</moduleInstanceDescriptors>

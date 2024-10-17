@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesTableDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesTableDisplay.xsd">
+	<general>
+		<displayName>Rainfall Forecast Summary</displayName>
+		<forecastFilter>
+			<workflowId>Process_Operational_Grids</workflowId>
+		</forecastFilter>
+		<variable>
+			<variableId>Precip_gfs_1hr</variableId>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</variable>
+		<variable>
+			<variableId>Temp_gfs_1hr</variableId>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>T.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</variable>
+	</general>
+	<tableTab>
+		<title>GFS Rainfall</title>
+		<showValues>true</showValues>
+		<showThresholdColors>true</showThresholdColors>
+		<!--<locationGroupingAttributeId>Province</locationGroupingAttributeId>-->
+		<thresholdGroupIdId>Rainfall Thresholds</thresholdGroupIdId>
+		<column variableId="Precip_gfs_1hr" name="Mean"/>
+	</tableTab>
+	<tableTab>
+		<title>GFS Temperature</title>
+		<showValues>true</showValues>
+		<showThresholdColors>true</showThresholdColors>
+		<!--<locationGroupingAttributeId>Province</locationGroupingAttributeId>-->
+		<column variableId="Temp_gfs_1hr" name="Mean"/>
+	</tableTab>
+</timeSeriesTableDisplay>

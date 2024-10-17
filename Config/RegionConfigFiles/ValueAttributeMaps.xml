@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*********************************-->
+<!--Value Attributes for displaying matched thresholds-->
+<!--*********************************-->
+<valueAttributeMaps xmlns="http://www.wldelft.nl/fews" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/valueAttributeMaps.xsd">
+	<!--*********************************-->
+	<!--   Coastal Summary Reports-->
+	<!--*********************************-->
+	<valueAttributeMap id="CompassDirectionLookup">
+		<attributes value="0">
+			<description>N</description>
+		</attributes>
+		<attributes value="1">
+			<description>NE</description>
+		</attributes>
+		<attributes value="2">
+			<description>E</description>
+		</attributes>
+		<attributes value="3">
+			<description>SE</description>
+		</attributes>
+		<attributes value="4">
+			<description>S</description>
+		</attributes>
+		<attributes value="5">
+			<description>SW</description>
+		</attributes>
+		<attributes value="6">
+			<description>W</description>
+		</attributes>
+		<attributes value="7">
+			<description>NW</description>
+		</attributes>
+	</valueAttributeMap>
+</valueAttributeMaps>

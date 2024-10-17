@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportObserved>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<relativePeriod unit="day" start="-2" end="0"/>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>GPM.nc</fileName>
+					<areaId>$AREA$</areaId>
+					<ncMetaData>
+						<title>Global Precipitation Measurement Mission</title>
+						<institution>NASA</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P.obs</parameterId>
+						<locationId>IMERG</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="minute" multiplier="30"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+		</activities>
+	</exportObserved>
+</exportArchiveModule>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholdGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholds.xsd">
+	<eventExpiryTime unit="day" multiplier="2"/>
+	<maxActionEventDuration unit="hour" multiplier="24"/>
+	<thresholdGroup id="Level Thresholds" name="Level Thresholds">
+		<defaultThreshold shortName="0"/>
+		<levelThreshold id="0" name="Do nothing" shortName="Do nothing">
+			<upWarningLevelId>0</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="AlertLevel" name="Alert Level" shortName="Alert Level">
+			<upWarningLevelId>Alert</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="MajorFloodLevel" name="Major Flood Level" shortName="Major Flood Level">
+			<upWarningLevelId>Flood</upWarningLevelId>
+		</levelThreshold>
+	</thresholdGroup>
+	<thresholdGroup id="Rainfall Thresholds" name="Rainfall Thresholds">
+		<defaultThreshold shortName="0"/>
+		<levelThreshold id="Rainfall_Med" name="Rainfall Medium" shortName="Rainfall Medium">
+			<upWarningLevelId>Rainfall_Med</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Rainfall_High" name="Rainfall High" shortName="Rainfall High">
+			<upWarningLevelId>Rainfall_High</upWarningLevelId>
+		</levelThreshold>
+	</thresholdGroup>
+</thresholdGroups>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>P_backup</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-10" end="16" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_backup</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-10" end="16" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pdaily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pdaily_def</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tdaily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tdaily_def</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>A016</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="P_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>P_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>T_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="P2daily">
+		<aggregation>
+			<accumulative>
+				<period>
+					<relativePeriod start="-2" end="+16" unit="day"/>
+				</period>
+				<inputVariable>
+					<variableId>P3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pdaily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="mergeP">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Pdaily</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_backup</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pdaily_def</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="T2daily">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>T3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tdaily</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="mergeT">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Tdaily</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>T_backup</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tdaily_def</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

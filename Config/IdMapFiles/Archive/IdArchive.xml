@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="Q.sim" external="flow_simulated"/>
+	<parameter internal="Q.obs" external="flow_observed"/>
+	<parameter internal="H.astro" external="level_astronomical"/>
+	<parameter internal="H.obs" external="level_observed"/>
+	<parameter internal="P.obs" external="precipitation_observed"/>
+	<parameter internal="P.forecast" external="precipitation_nwp"/>
+	<parameter internal="T.forecast" external="temperature_nwp"/>
+	<parameter internal="WS.u.forecast" external="windspeed_u_nwp"/>
+	<parameter internal="WS.v.forecast" external="windspeed_v_nwp"/>
+	<parameter internal="P" external="precipitation_model"/>
+	<parameter internal="T" external="temperature_model"/>
+	<parameter internal="EPot" external="evaporation_model"/>
+</idMap>

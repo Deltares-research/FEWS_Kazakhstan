@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportSimulated>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<areaId>$catchment$</areaId>
+			<subFolderPrefix>WFLOW_Forecast</subFolderPrefix>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>SWIFT_$catchment$_Forecast.nc</fileName>
+					<sourceId>SWIFT_Official</sourceId>
+					<ncMetaData>
+						<title>Export of WFLOW Forecast Flows</title>
+						<institution>Deltares</institution>
+						<summary>WFLOW Historic Flow Forecast Location Series extracted from grids</summary>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_toGauges_Forecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationSetId>all_stations_Flow</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+				<netcdfExportActivity>
+					<fileName>SWIFT_$catchment$_Rainfall_Forecast.nc</fileName>
+					<sourceId>SWIFT_Official</sourceId>
+					<ncMetaData>
+						<title>Export of WFLOW Forecast Flows and Meteo Input Series</title>
+						<institution>Deltares</institution>
+						<summary>WFLOW Forecast Flow and Meteo Grids</summary>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_GA_Forecast</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Forecast</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Forecast</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>T</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Forecast</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>EPot</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+		</activities>
+	</exportSimulated>
+</exportArchiveModule>

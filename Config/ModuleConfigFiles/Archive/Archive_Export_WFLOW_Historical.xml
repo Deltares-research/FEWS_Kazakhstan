@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportSimulated>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<areaId>$catchment$</areaId>
+			<subFolderPrefix>WFLOW_Historic</subFolderPrefix>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>WFLOW_$catchment$_Historic_Flows.nc</fileName>
+					<sourceId>WFLOW_Historic</sourceId>
+					<ncMetaData>
+						<title>Export of WFLOW Historic Flows</title>
+						<institution>Deltares</institution>
+						<summary>WFLOW Historic Flow Forecast Location Series extracted from grids</summary>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_toGauges_Historical</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationSetId>all_stations_Flow</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<relativeViewPeriod unit="day" start="-10" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+				<netcdfExportActivity>
+					<fileName>WFLOW_$catchment$_Historic_Grids.nc</fileName>
+					<sourceId>WFLOW_Historic</sourceId>
+					<ncMetaData>
+						<title>Export of WFLOW Historic Flows and Meteo Input Series</title>
+						<institution>Deltares</institution>
+						<summary>WFLOW Historic Flow and Meteo Grids</summary>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_GA_Historical</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<relativeViewPeriod unit="day" start="-10" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Historical</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<relativeViewPeriod unit="day" start="-10" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Historical</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>T</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<relativeViewPeriod unit="day" start="-10" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>WFlow_$catchment$_Preprocess_Historical</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>EPot</parameterId>
+						<locationId>wflow_$catchment$</locationId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep id="WFlow_timestep"/>
+						<relativeViewPeriod unit="day" start="-10" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+			<moduleStatesExportActivities>
+				<moduleStateExportActivity>
+					<moduleInstanceId>$catchment$_WFLOW_Historic</moduleInstanceId>
+				</moduleStateExportActivity>
+			</moduleStatesExportActivities>
+		</activities>
+	</exportSimulated>
+</exportArchiveModule>

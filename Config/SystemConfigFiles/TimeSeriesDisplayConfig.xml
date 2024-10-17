@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
+	<generalDisplayConfig>
+		<!--<legendTextFunction>%PARAMETER_NAME% measured at %LOCATION_NAME%</legendTextFunction>-->
+		<onlyShowThresholdsSharedByAllSeries>true</onlyShowThresholdsSharedByAllSeries>
+	</generalDisplayConfig>
+	<defaultViewPeriod unit="day" start="-10" end="5"/>
+	<thresholdDisplayConfig>
+		<thresholdDisplayOptions id="AlertLevel" visible="true">
+			<color>orange</color>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="MajorFloodLevel" visible="true">
+			<color>red</color>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Rainfall_Med" visible="true">
+			<color>orange</color>
+			<labelAlignment>left</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Rainfall_High" visible="true">
+			<color>red</color>
+			<labelAlignment>left</labelAlignment>
+		</thresholdDisplayOptions>
+	</thresholdDisplayConfig>
+	<timeMarkersDisplayConfig>
+		<timeMarkerDisplayOptions marker="systemTime">
+			<color>green</color>
+			<lineStyle>solid</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="timeZero">
+			<color>gray</color>
+			<lineStyle>dotted</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="displayTime">
+			<color>red</color>
+			<lineStyle>solid</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="threshold">
+			<color>orange</color>
+			<lineStyle>dashed</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="modifierStartTime">
+			<color>dark slate gray4</color>
+			<lineStyle>solid;thick</lineStyle>
+			<label>start</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="modifierEndTime">
+			<color>dark slate gray4</color>
+			<lineStyle>solid;thick</lineStyle>
+			<label>end</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="newModifierStartTime">
+			<color>green</color>
+			<lineStyle>solid</lineStyle>
+			<label>start</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="newModifierEndTime">
+			<color>green</color>
+			<lineStyle>solid</lineStyle>
+			<label>end</label>
+		</timeMarkerDisplayOptions>
+	</timeMarkersDisplayConfig>
+	<parametersDisplayConfig>
+		<parameterDisplayOptions id="H.obs">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<scaleUnit>1</scaleUnit>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.obs">
+			<preferredColor>green</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<scaleUnit>5</scaleUnit>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.obs">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<max>10</max>
+			<scaleUnit>1</scaleUnit>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.tot">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<max>10</max>
+			<scaleUnit>1</scaleUnit>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.forecast">
+			<preferredColor>blue violet</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<scaleUnit>1</scaleUnit>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.forecast">
+			<ensembleId>GEFS</ensembleId>
+			<preferredColor>blue4</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<scaleUnit>1</scaleUnit>
+		</parameterDisplayOptions>
+	</parametersDisplayConfig>
+	<statisticalFunctions>
+		<statisticalFunction function="scatterPlot"/>
+		<statisticalFunction function="doubleMassCurve"/>
+		<statisticalFunction function="durationExceedence"/>
+		<statisticalFunction function="cumulative">
+			<lineStyle>solid;thick</lineStyle>
+		</statisticalFunction>
+		<statisticalFunction function="boxPlot" ignoreMissings="true">
+			<timeStep id="daily"/>
+			<timeStep id="weekly"/>
+			<timeStep id="monthly"/>
+		</statisticalFunction>
+		<statisticalFunction function="calendarAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="accumulationInterval">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="accumulationAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="relativeAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="movingAverage">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="centralMovingAverage">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="historicalAnalysis">
+		   <historicalPeriods>
+			  <historicalPeriod>
+				 <startForwardLookingPeriod>--01-01</startForwardLookingPeriod>
+				 <season startMonthDay="--01-01" endMonthDay="--12-01" label="calender year"/>
+			  </historicalPeriod>
+		   </historicalPeriods>
+		</statisticalFunction>
+	</statisticalFunctions>
+	<descriptiveFunctionGroups>
+		<descriptiveFunctionGroup name="Basic statistics">
+			<descriptiveFunction function="infoLocationId" ignoreMissings="true"/>
+			<descriptiveFunction function="infoLocationName" ignoreMissings="true"/>
+			<descriptiveFunction function="infoParameterId" ignoreMissings="true"/>
+			<descriptiveFunction function="infoParameterName" ignoreMissings="true"/>
+			<descriptiveFunction function="startTime" ignoreMissings="true"/>
+			<descriptiveFunction function="endTime" ignoreMissings="true"/>
+			<descriptiveFunction function="mean" ignoreMissings="true"/>
+			<descriptiveFunction function="min" ignoreMissings="true"/>
+			<descriptiveFunction function="max" ignoreMissings="true"/>
+			<descriptiveFunction function="sum" ignoreMissings="true"/>
+			<descriptiveFunction function="missings" ignoreMissings="true"/>
+			<descriptiveFunction function="unreliables" ignoreMissings="true"/>
+			<descriptiveFunction function="doubtfuls" ignoreMissings="true"/>
+			<descriptiveFunction function="completed" ignoreMissings="true"/>
+			<descriptiveFunction function="corrected" ignoreMissings="true"/>
+			<descriptiveFunction function="count" ignoreMissings="true"/>
+			<descriptiveFunction function="standardDeviation" ignoreMissings="true"/>
+		</descriptiveFunctionGroup>
+	</descriptiveFunctionGroups>
+	<defaultGraphicalEditMode>adjustShapeTimeSeriesByDragging</defaultGraphicalEditMode>
+	<buttonSettings>
+		<showDisplayGroups/>
+		<showTable/>
+		<showTwentyFourHour visible="false"/>
+		<showChart/>
+		<showStatistics/>
+		<rotateChartAndTable/>
+		<zoomIn/>
+		<zoomOut/>
+		<zoomToDefault/>
+		<selectPreviousZoomLevel/>
+		<selectNextZoomLevel/>
+		<moveBackOneViewPeriod/>
+		<moveBackHalfViewPeriod/>
+		<moveForwardHalfViewPeriod/>
+		<moveForwardOneViewPeriod/>
+		<showAllData/>
+		<switchReferenceLevel/>
+		<setViewPeriod/>
+		<copyTimeSeries/>
+		<pasteTimeSeries/>
+		<lockSelection/>
+		<runWorkflow visible="false"/>
+		<undoTimeSeriesChanges visible="false"/>
+		<saveTimeSeriesChanges/>
+		<setTimeSeriesEditableByClicking visible="false"/>
+		<showThresholdWarningLevels/>
+		<thresholdGroupSelectionButton visible="true"/>
+		<printChart/>
+		<saveChartAsPicture/>
+		<showLongTermScroller/>
+		<searchAndSelectForecasts/>
+		<setTimeSeriesVisibility/>
+		<showValidationRules visible="false"/>
+	</buttonSettings>
+</timeSeriesDisplay>

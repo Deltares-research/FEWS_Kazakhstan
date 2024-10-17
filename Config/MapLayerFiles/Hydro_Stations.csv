@@ -1,0 +1,2 @@
+ ID,NAME,LATITUDE,LONGITUDE,ALTITUDE,LEVEL,FLOW,BASIN,CatchArea,AlertLevel,FloodLevel,Source ,MODELOUTPUT
+HydroDummy,Dummy Hydro,0,0,0,Level,Flow,Test,200,5,10,Dummy,WFLOW_Test

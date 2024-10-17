@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+  <import>
+<!--    <general>
+      <importType>GSOD</importType> 
+      <folder>$IMPORT_FOLDER$/GSOD</folder>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/GSOD</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/GSOD</backupFolder>
+			<idMapId>IdImportGSOD</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+03:00</timeZoneOffset>
+			</importTimeZone>		
+			<dataFeedId>GSOD.Discharge</dataFeedId>
+		</general>-->
+		<general>
+		   <importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/GSOD</folder>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/GSOD</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/GSOD</backupFolder>
+		   <table>
+			  <dateTimeColumn name="DATE" pattern="yyyy-MM-dd"/>
+			  <locationColumn name="STATION"/>
+			  <valueColumn name="PRCP" parameterId="P.obs" unit="mm"/>
+		   </table>
+		   <missingValue>99.9</missingValue>
+		   <importTimeZone>
+			  <timeZoneOffset>+03:00</timeZoneOffset>
+		   </importTimeZone>
+		   <dataFeedId>GSOD.Precipitation</dataFeedId>
+		   <columnSeparator>,</columnSeparator>
+		   <decimalSeparator>.</decimalSeparator>
+		   
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+<!--		<externUnit parameterId="Q.obs" unit="m³/s"/>-->
+</import>
+</timeSeriesImportRun>

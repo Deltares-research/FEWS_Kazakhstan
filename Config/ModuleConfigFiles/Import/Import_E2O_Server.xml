@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://wci.earth2observe.eu/thredds/dodsC/ecmwf/met_forcing_v1/tair_3hourly.nc</serverUrl>
+			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="true"/>
+			<idMapId>IdImportE2O</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<dataFeedId>E2O.Server.Temperature</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_E2O_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>E2O_25</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="T.obs" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://wci.earth2observe.eu/thredds/dodsC/deltares/PET/wrr2/0.25degree/penmanmonteith-agg.nc</serverUrl>
+			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="true"/>
+			<idMapId>IdImportE2O</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<dataFeedId>E2O.Server.Evaporation</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_E2O_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PET.obs</parameterId>
+			<locationId>E2O_25</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://wci.earth2observe.eu/thredds/dodsC/jrc/mswep-rainf-agg.nc</serverUrl>
+			<!--<serverUrl>https://wci.earth2observe.eu/thredds/dodsC/cnr/3b42-rainfall-3h-agg.nc.html</serverUrl>-->
+			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="true"/>
+			<idMapId>IdImportE2O</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<dataFeedId>E2O.Server.Precipitation</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_E2O_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>E2O_25</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.obs" unit="kg_m2s_3hourly"/>
+	</import>
+</timeSeriesImportRun>

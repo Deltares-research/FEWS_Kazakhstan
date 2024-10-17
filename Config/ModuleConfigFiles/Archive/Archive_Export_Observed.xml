@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportObserved>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<relativePeriod unit="day" start="-5" end="0"/>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>WaterLevel_Observed_Hour.nc</fileName>
+					<areaId>$BASIN$</areaId>
+					<ncMetaData>
+						<title>Observed Water Levels</title>
+						<institution>Deltares</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>true</includeComments>
+					<includeFlags>true</includeFlags>
+					<thresholdGroupId>Level Thresholds</thresholdGroupId>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_Station</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>H.obs</parameterId>
+						<locationSetId>all_stations_Level</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+				<netcdfExportActivity>
+					<fileName>WaterLevel_Observed_Day.nc</fileName>
+					<areaId>$BASIN$</areaId>
+					<ncMetaData>
+						<title>Observed Water Levels</title>
+						<institution>Deltares</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>true</includeComments>
+					<includeFlags>true</includeFlags>
+					<thresholdGroupId>Level Thresholds</thresholdGroupId>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_Station</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>H.obs</parameterId>
+						<locationSetId>all_stations_Level</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+				<netcdfExportActivity>
+					<fileName>Flow_Observed_Hour.nc</fileName>
+					<areaId>$BASIN$</areaId>
+					<ncMetaData>
+						<title>Observed Flows</title>
+						<institution>Deltares</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>true</includeComments>
+					<includeFlags>true</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_Station</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.obs</parameterId>
+						<locationSetId>all_stations_Flow</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+				<netcdfExportActivity>
+					<fileName>Flow_Observed_Day.nc</fileName>
+					<areaId>$BASIN$</areaId>
+					<ncMetaData>
+						<title>Observed Flows</title>
+						<institution>Deltares</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>true</includeComments>
+					<includeFlags>true</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_Station</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.obs</parameterId>
+						<locationSetId>all_stations_Flow</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+		</activities>
+	</exportObserved>
+</exportArchiveModule>

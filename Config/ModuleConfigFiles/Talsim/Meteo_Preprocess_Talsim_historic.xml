@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>P_backup</variableId>
+				<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_backup</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pnoneq</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pdaily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pdaily_def</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<!--<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>-->
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tnoneq</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tdaily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tdaily_def</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<!--<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>-->
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="P_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>P_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>T_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="P2daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Pnoneq</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pdaily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="mergeP">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Pdaily</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_backup</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pdaily_def</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="T2daily">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Tnoneq</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tdaily</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="mergeT">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Tdaily</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>T_backup</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tdaily_def</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

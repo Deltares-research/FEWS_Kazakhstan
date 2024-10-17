@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportMessages>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<relativePeriod unit="day" start="-5" end="0"/>
+		</general>
+		<activities>
+			<forecasterNotesExportActivities>
+				<forecasterNotesExportActivity>
+					<areaId>$AREA$</areaId>
+				</forecasterNotesExportActivity>
+			</forecasterNotesExportActivities>
+		</activities>
+	</exportMessages>
+</exportArchiveModule>

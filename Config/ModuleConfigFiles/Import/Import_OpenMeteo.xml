@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
-<general>
-		   <importType>generalCSV</importType>
+		<general>
+			<importType>generalCSV</importType>
 			<folder>$IMPORT_FOLDER$/OpenMeteo</folder>
+			<fileNamePatternFilter>*_historic_openmeteo.csv</fileNamePatternFilter>
 			<failedFolder>$IMPORT_FAILED_FOLDER$/OpenMeteo</failedFolder>
 			<backupFolder>$IMPORT_BACKUP_FOLDER$/OpenMeteo</backupFolder>
-
-		   <table>
-			  <dateTimeColumn name="time" pattern="yyyy-MM-dd HH:mm"/>
-			  <valueColumn name="temperature_2m" parameterId="T.obs" unit="oC" locationId="35188099999"/>
-			  <valueColumn name="precipitation" parameterId="P.tot" unit="mm" locationId="35188099999"/>
-			  <valueColumn name="rain" parameterId="P.obs" unit="mm" locationId="35188099999"/>
-			  <valueColumn name="snowfall" parameterId="SNOW.cm" unit="cm" locationId="35188099999"/>
-			  <valueColumn name="snow_depth" parameterId="SNOW.tot" unit="m" locationId="35188099999"/>
-		   </table>
-		   	<!--<idMapId>IdImportOM</idMapId>-->
+			<table>
+				<dateTimeColumn name="Time" pattern="yyyy-MM-dd HH:mm"/>
+				<locationColumn name="Location"/>
+				<valueColumn name="temperature_2m" parameterId="T.obs" unit="oC"/>
+				<valueColumn name="relative_humidity_2m" parameterId="RH.obs" unit="%"/>
+				<valueColumn name="precipitation" parameterId="P.tot" unit="mm"/>
+				<valueColumn name="wind_speed_10m" parameterId="WS.obs" unit="m/s"/>
+				<valueColumn name="snowfall" parameterId="SNOW.cm" unit="cm"/>
+				<valueColumn name="snow_depth" parameterId="SNOW.tot" unit="m"/>
+			</table>
+			<idMapId>IdImportOM</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
-		   <missingValue>99.9</missingValue>
-		   <importTimeZone>
-			  <timeZoneOffset>+03:00</timeZoneOffset>
-		   </importTimeZone>
-		   <dataFeedId>OpenMeteo.ERA5</dataFeedId>
-		   <skipFirstLinesCount>0</skipFirstLinesCount>
-<!--		   <gotoLineWhichStartsWith>time,temperature_2m (°C),precipitation (mm),rain (mm),snowfall (cm),snow_depth (m)</gotoLineWhichStartsWith>-->
-		   <columnSeparator>,</columnSeparator>
-		   <decimalSeparator>.</decimalSeparator>	   
+			<missingValue>99.9</missingValue>
+			<importTimeZone>
+				<timeZoneOffset>+03:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>OpenMeteo.ERA5</dataFeedId>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+			<columnSeparator>,</columnSeparator>
+			<decimalSeparator>.</decimalSeparator>
 		</general>
 		<timeSeriesSet>
 			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>T.obs</parameterId>
-			<locationId>35188099999</locationId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>RH.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -40,7 +50,7 @@
 			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.tot</parameterId>
-			<locationId>35188099999</locationId>
+			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -49,7 +59,7 @@
 			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
-			<locationId>35188099999</locationId>
+			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -58,7 +68,7 @@
 			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>SNOW.cm</parameterId>
-			<locationId>35188099999</locationId>
+			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -67,12 +77,99 @@
 			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>SNOW.tot</parameterId>
-			<locationId>35188099999</locationId>
+			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-<!--		<externUnit parameterId="T.obs" unit="oC"/>
-		<externUnit parameterId="P.obs" unit="mm"/>-->
+	</import>
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/OpenMeteo</folder>
+			<fileNamePatternFilter>*_forecast_openmeteo.csv</fileNamePatternFilter>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/OpenMeteo</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/OpenMeteo</backupFolder>
+			<table>
+				<dateTimeColumn name="Time" pattern="yyyy-MM-dd HH:mm"/>
+				<locationColumn name="Location"/>
+				<valueColumn name="temperature_2m" parameterId="T.obs" unit="oC"/>
+				<valueColumn name="relative_humidity_2m" parameterId="RH.obs" unit="%"/>
+				<valueColumn name="precipitation" parameterId="P.tot" unit="mm"/>
+				<valueColumn name="wind_speed_10m" parameterId="WS.obs" unit="m/s"/>
+				<valueColumn name="snowfall" parameterId="SNOW.cm" unit="cm"/>
+				<valueColumn name="snow_depth" parameterId="SNOW.tot" unit="m"/>
+			</table>
+			<idMapId>IdImportOM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>99.9</missingValue>
+			<importTimeZone>
+				<timeZoneOffset>+03:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>OpenMeteo.ERA5</dataFeedId>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+			<columnSeparator>,</columnSeparator>
+			<decimalSeparator>.</decimalSeparator>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>RH.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SNOW.cm</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SNOW.tot</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
 	</import>
 </timeSeriesImportRun>

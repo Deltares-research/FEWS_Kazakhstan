@@ -41,10 +41,19 @@
 		<exportActivities>
 			<exportStateActivity>
 				<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
-				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</stateExportDir>
+				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTalsim</stateExportDir>
+				<stateConfigFile>outstate.xml</stateConfigFile>
+				<stateLocations type="file">
+					<stateLocation>
+						<readLocation>FEWStoTALSIM/ishim.state</readLocation>
+						<writeLocation>TALSIMtoFEWS/ishim.state</writeLocation>
+					</stateLocation>
+				</stateLocations>
+				<!--kijken of outstate op de juiste plek wordt geschreven-->
 				<stateSelection>
 					<warmState>
-						<stateSearchPeriod unit="day" start="-365" end="0" startOverrulable="false"/>
+						<stateSearchPeriod unit="day" start="-31" end="0" startOverrulable="false"/>
+						<coldStateTime value="-32" unit="day"/>
 					</warmState>
 				</stateSelection>
 			</exportStateActivity>
@@ -99,10 +108,11 @@
 		</executeActivities>
 		<importActivities>
 			<importStateActivity>
-				<stateFile>
+				<stateConfigFile>outstate.xml</stateConfigFile>
+<!--				<stateFile>
 					<importFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/ishim.state</importFile>
 					<relativeExportFile>../FEWStoTALSIM/ishim.state</relativeExportFile>
-				</stateFile>
+				</stateFile>-->
 			</importStateActivity>
 			
 			<importTimeSeriesActivity>

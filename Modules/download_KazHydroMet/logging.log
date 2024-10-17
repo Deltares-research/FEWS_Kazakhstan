@@ -1,0 +1,3 @@
+2024-10-17 10:45:03,673 - INFO - Script started with arguments: ['download_KazHydroMet.py', '-', 'd:/FEWS/FEWS_Accelerator/FEWS_Accelerator/Astana_SA/Modules/download_KazHydroMet/', 'hydro1d.csv', '20241016000000', 'd:/FEWS/FEWS_Accelerator/FEWS_Accelerator/Astana_SA/Modules/download_KazHydroMet/logging.log']
+2024-10-17 10:45:03,675 - INFO - Data successfully written to d:/FEWS/FEWS_Accelerator/FEWS_Accelerator/Astana_SA/Modules/download_KazHydroMet/20241016000000_hydro1d.csv
+2024-10-17 10:45:03,676 - INFO - Process completed successfully. Data saved to d:/FEWS/FEWS_Accelerator/FEWS_Accelerator/Astana_SA/Modules/download_KazHydroMet/20241016000000_hydro1d.csv

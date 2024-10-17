@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locations.xsd">
+	<geoDatum>WGS 1984</geoDatum>
+	<!--Grid definitions -->
+	<location id="IMERG_world" name="IMerge Rainfall">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="IMERG" name="IMerge Rainfall">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="GFS_world" name="GFS Forecast">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="GFS" name="GFS Forecast">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="GEFS" name="GEFS Ensemble Forecast">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="GSMAP_world" name="GSMAP Rainfall">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="GSMAP" name="GSMAP Rainfall">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="WW3" name="WW3 Forecast">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="HYCOM.Area" name="HYCOM Surface">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="E2O_25" name="E2O_25 0.25 degree grid">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="E2O_5" name="E2O_5 0.5 degree grid">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+	<location id="radar" name="radar of station xx">
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</location>
+</locations>

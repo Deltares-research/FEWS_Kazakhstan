@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportObserved>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<relativePeriod unit="day" start="-2" end="0"/>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>GSMAP.nc</fileName>
+					<areaId>$AREA$</areaId>
+					<ncMetaData>
+						<title>Global Satellite Mapping of Precipitation</title>
+						<institution>JAXA</institution>
+						<source>Delft-FEWS (Accelerator)</source>
+					</ncMetaData>
+					<includeComments>false</includeComments>
+					<includeFlags>false</includeFlags>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GSMAP_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P.obs</parameterId>
+						<locationId>GSMAP</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+		</activities>
+	</exportObserved>
+</exportArchiveModule>

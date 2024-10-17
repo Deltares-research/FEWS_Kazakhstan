@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualifiers xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/qualifiers.xsd">
+	<allowReferencingUndefinedQualifiers>false</allowReferencingUndefinedQualifiers>
+	<qualifier id="min" name="min"/>
+	<qualifier id="mean" name="mean"/>
+	<qualifier id="max" name="max"/>
+	<qualifier id="25" name="25%"/>
+	<qualifier id="33" name="33%"/>
+	<qualifier id="66" name="66%"/>
+	<qualifier id="75" name="75%"/>
+	<qualifier id="Accum" name="Accum"/>
+	<qualifier id="corr" name="corr"/>
+	<qualifier id="NoZero" name="NoZero"/>
+	<qualifier id="wet" name="wet"/>
+	<qualifier id="dry" name="dry"/>
+	<qualifier id="pan" name="pan"/>
+	<qualifier id="backup" name="backup"/>
+	<qualifier id="GPM" name="GPM"/>
+	<qualifier id="Observed" name="Observed"/>
+	<qualifier id="GFS" name="GFS"/>
+	<qualifier id="GEFS" name="GEFS"/>
+	<qualifier id="E2O" name="E2O"/>
+	<qualifier id="Early" name="Early"/>
+	<qualifier id="Late" name="Late"/>
+	<qualifier id="Final" name="Final"/>
+	<qualifier id="Day_Cmd" name="Day_Cmd"/>
+</qualifiers>

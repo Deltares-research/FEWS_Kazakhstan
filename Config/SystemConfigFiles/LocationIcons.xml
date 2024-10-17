@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationIcons.xsd">
+	<rootDir>icons</rootDir>
+	<locationIcon>
+		<description>Meteo Stations</description>
+		<iconId>rain.png</iconId>
+		<locationSetId>meteo_stations</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Flow measurement sites</description>
+		<iconId>flowgauge</iconId>
+		<locationSetId>all_stations_Flow</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Water level measurement sites</description>
+		<iconId>hydro_site_data</iconId>
+		<locationSetId>all_stations_Level</locationSetId>
+	</locationIcon>
+</locationIcons>

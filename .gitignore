@@ -1,0 +1,16 @@
+localDataStore/*
+MapsCache
+temp
+DumpFiles
+Modules/*
+log.*
+*.lnk
+running
+bin/*
+user_settings.ini
+exportedModuleDataSetFiles.txt
+Import/*
+Export/*
+.vs
+ProgramFiles/*
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="P.forecast" external="NIE"/>
+	<parameter internal="T.forecast" external="TEM"/>
+	<parameter internal="P.tot" external="NIE"/>
+	<parameter internal="T.obs" external="TEM"/>
+	<location internal="A016" external="Ishim"/>
+	<location internal="35188099999" external="Ishim"/>
+</idMap>

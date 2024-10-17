@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locationSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationSets.xsd">
+	<locationSet id="meteo_stations">
+		<csvFile>
+			<file>GSOD_stations.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%STATION_ID%</id>
+			<x>%LONGITUDE%</x>
+			<y>%LATITUDE%</y>
+			<attribute id="STATION" name="STATION">
+				<text>%STATION%</text>
+			</attribute>
+			<attribute id="country" name="country">
+				<text>%COUNTRY%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="GSOD_stations">
+		<locationSetId>meteo_stations</locationSetId>
+		<constraints>
+		<attributeTextEquals id="country" equals="KZ"/>
+		</constraints>
+	</locationSet>
+	<!--Standard GRDC stations-->
+	<locationSet id="GRDC_stations_shp">
+		<description>GRDC station list from shapefile (geojson)</description>
+		<subLocationSetIdFunction>GRDC_stations</subLocationSetIdFunction>
+		<esriShapeFile>
+			<file>GRDC/GRDC_stationbasins.shp</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%grdc_no%</id>
+			<name>%station%</name>
+			<toolTip>Station Name: %station%\n River: %river%\n Source: %source%</toolTip>
+			<attribute id="river" name="river">
+				<text>%river%</text>
+			</attribute>
+			<attribute id="data" name="data">
+				<text>%Data%</text>
+			</attribute>
+		</esriShapeFile>
+		<constraints>
+		<attributeTextEquals id="data" equals="1"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="GRDC_stations_KZ">
+		<locationSetId>GRDC_stations_shp</locationSetId>
+	</locationSet>
+	<!--Special Country Specific LocationSets-->
+		<locationSet id="GADM2">
+		<description>YesilRiverCatchment</description>
+		<esriShapeFile>
+			<file>catchments/esil_basin_ezg.shp</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%TalsimKey%</id>
+			<name>%TalsimKey%</name>
+			<toolTip>Station Name: %TalsimKey%</toolTip>
+		</esriShapeFile>
+	</locationSet>
+</locationSets>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--GFS forecasts plus GMP satellite -->
+	<variable>
+		<variableId>Rain_grid_GEFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GEFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GEFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_scalar_GEFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_scalar_Accum_GEFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<qualifierId>Accum</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_grid_GEFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GEFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>GEFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_scalar_GEFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="Rain_interpolate_GEFS">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Rain_grid_GEFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_scalar_GEFS</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Accumulate rainfall data per catchment">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Rain_scalar_GEFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_scalar_Accum_GEFS</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+	<transformation id="Temp_interpolate_GEFS">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Temp_grid_GEFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temp_scalar_GEFS</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

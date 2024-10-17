@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>$REGION_HOME$/Modules/</rootDir>
+		<workDir>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/</workDir>
+		<exportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportTalsim</exportIdMap>
+		<exportUnitConversionsId>ImportUnitConversions</exportUnitConversionsId>
+		<importDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/</importDir>
+		<importIdMap>IdImportTalsim</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%/DUMP</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/log/TalsimFEWSAdapter.log</diagnosticFile>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/dataBase/fews_zre/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/dataSets/ishim/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/log/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/log/*.*</filter>
+			</purgeActivity>
+			<unzipActivity>
+				<sourceZipFile>$REGION_HOME$/Config/ModuleDataSetFiles/Talsim_ModuleConfig_Example/Ishim.zip</sourceZipFile>
+				<destinationDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/dataSets</destinationDir>
+			</unzipActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="day" start="-365" end="0" startOverrulable="false"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportTimeSeriesActivity>
+				<exportFile>timeseries.xml</exportFile>		
+				<timeSeriesSets>
+				<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>				
+				</timeSeriesSets>
+				<checkMissing>true</checkMissing>
+			</exportTimeSeriesActivity>
+<!--			<exportDataSetActivity>
+				<moduleInstanceId>Talsim_Historic</moduleInstanceId>
+			</exportDataSetActivity>-->
+			<exportRunFileActivity>
+				<exportFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/runinfo.xml</exportFile>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+			<command>
+				<executable>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/run_talsim.bat</executable>
+			</command>
+
+				<logFile>
+					<file>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/log/TalsimFEWSAdapter.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importStateActivity>
+				<stateFile>
+					<importFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/ishim.state</importFile>
+					<relativeExportFile>../FEWStoTALSIM/ishim.state</relativeExportFile>
+				</stateFile>
+			</importStateActivity>
+			
+			<importTimeSeriesActivity>
+				<importFile>talsim_results.xml</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationSetId>GADM2</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importTimeSeriesActivity>
+		</importActivities>
+		<shutDownActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/*.xml</filter>
+			</purgeActivity>
+			<zipActivity>
+				<sourceDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS</sourceDir>
+				<destinationZipFile>$REGION_HOME$/warmStates/FEWStoTALSIM.zip</destinationZipFile>
+			</zipActivity>
+		</shutDownActivities>
+	</activities>
+</generalAdapterRun>

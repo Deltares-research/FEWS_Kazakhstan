@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
+	<enableAutoRun>false</enableAutoRun>
+	<enableAutoSelectParameters>true</enableAutoSelectParameters>
+	<enableSelectNodesFromMap>false</enableSelectNodesFromMap>
+	<nodes id="Information_Sources" name="Information Sources">
+		<localRun>true</localRun>
+		<nodes id="Delft-FEWS">
+			<node id="Delft_FEWS" name="Delft-FEWS Software Community">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://oss.deltares.nl/web/delft-fews/</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+			<node id="Delft-FEWS_Wiki" name="DELFT-FEWS Documentation">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://publicwiki.deltares.nl/display/FEWSDOC/Home</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+			<node id="Delft-FEWS_UserGuide" name="Delft-FEWS User Guide">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://publicwiki.deltares.nl/display/FEWSDOC/Delft-FEWS+User+Guide</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+			<node id="Deltares" name="Deltares">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://www.deltares.nl/en/</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+		</nodes>
+		<nodes id="Operational Data">
+			<node id="IMERG_GPM" name="IMERG GPM Rainfall">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://gpm.nasa.gov/category/keywords/imerg</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+<!--			<node id="GSMAP" name="GSMAP Rainfall">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://sharaku.eorc.jaxa.jp/GSMaP_crest/index.html</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>-->
+			<node id="GFS" name="Global Forecast System (GFS)">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+						<node id="GEFS" name="Global Forecast System Ensemble (GEFS)">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://www.ncei.noaa.gov/products/weather-climate-models/global-ensemble-forecast</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+			<node id="GSOD" name="Global Summary of the Day">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00516t</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+						<node id="GRDC" name="Global Terrestrial Network for River Discharge (GTN-R)">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://grdc.bafg.de/GRDC/EN/04_spcldtbss/44_GTNR/gtnr.html?nn=201574</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+		</nodes>
+<!--		<nodes id="Historic Data (1979-2014)">
+			<node id="E2O" name="earth2Observe (E2O)">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://wci.earth2observe.eu/</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+		</nodes>-->
+		<nodes id="Models">
+<!--			<node id="WFLOW_Tech" name="WFLOW Technical documentation">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://wflow.readthedocs.io/en/latest/</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>-->
+			<node id="Talsim_Tech" name="Talsim Technical documentation">
+				<mainPanel>web browser display</mainPanel>
+				<url>https://www.talsim.de/docs/index.php?title=Delft-FEWS/en</url>
+				<localRun>false</localRun>
+				<showRunApprovedForecastButton>false</showRunApprovedForecastButton>
+			</node>
+		</nodes>
+	</nodes>
+	<nodes id="Import_Op" name="Import and Process Operational Data">
+		<node id="Import_hydro_observations" name="Import hydro observations (GRDC)">
+			<workflowId>Import_GRDC</workflowId>
+			<viewPermission>NotVisible</viewPermission>
+			<graceTime unit="hour" multiplier="1"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Import_forecasts" name="Import meteo forecasts (GFS)">
+			<workflowId>Import_Forecasts</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Import_ensembles" name="Import meteo ensembles (GEFS)">
+			<workflowId>Import_Ensemble_Forecasts</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Import_earthobservation" name="Import earth observations (GPM Rainfall)">
+			<workflowId>Import_EarthObservation</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="pocess_meteo_grids" name="Process meteo grids">
+			<workflowId>Process_Operational_Grids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Export_Grids" name="Export Forecasts">
+			<workflowId>Export_Operational_Grids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+	</nodes>
+	<nodes id="Modify_Op" name="Modify Forecasts">
+		<node id="Modify_CopyGFS" name="Copy GFS Grid">
+			<workflowId>Copy_GFS_Grid</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Modify_ModifyGFS" name="Modify GFS Grid">
+			<workflowId>Modify_GFS_Grid</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+	</nodes>
+	<nodes id="Import_Radar" name="Import Kazakhstan radar">
+		<node id="Import_KazRadar" name="Import radar data from Kazakhstan stations">
+			<workflowId>Import_KazRadar</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		
+	</nodes>
+<!--	<nodes id="Run_WFlow" name="Run WFlow Model">
+		<groupId>WFlow</groupId>		
+	</nodes>-->
+	<nodes id="Run_Talsim" name="Run Talsim Model">
+		<node id="Run_Talsim_model" name="Running a forecast with the Talsim Model">
+			<workflowId>Talsim_forecast</workflowId>
+			<localRun>true</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+	</nodes>
+</topology>

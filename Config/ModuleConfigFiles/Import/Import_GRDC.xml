@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+  <import>
+    <general>
+      <importType>WISKI</importType>
+      <folder>$IMPORT_FOLDER$/GRDC</folder>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/GRDC</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/GRDC</backupFolder>
+			<idMapId>IdImportGRDC</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+03:00</timeZoneOffset>
+			</importTimeZone>		
+			<dataFeedId>GRDC.Discharge</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GRDC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<qualifierId>Day_Cmd</qualifierId>
+			<locationSetId>GRDC_stations_shp</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="Q.obs" unit="m³/s"/>
+</import>
+</timeSeriesImportRun>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews">
+	<variable>
+		<variableId>Rainfall_Depart</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<qualifierId>Accum</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_mean</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>mean</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_25</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>25</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_33</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>33</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_66</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>66</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rainfall_Depart_75</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>75</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_mean</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>mean</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_25</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>25</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_33</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>33</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_66</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>66</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temperature_Depart_75</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>75</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<!--Compute Statistics from Ensemble-->
+	<transformation id="Rainfall Compute Mean">
+		<statisticsEnsemble>
+			<mean>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rainfall_Depart_mean</variableId>
+				</outputVariable>
+			</mean>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute Maximum">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rainfall_Depart_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute Minimum">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rainfall_Depart_min</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute 25 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<value>25</value>
+				<outputVariable>
+					<variableId>Rainfall_Depart_25</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute 33 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<value>33</value>
+				<outputVariable>
+					<variableId>Rainfall_Depart_33</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute 66 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<value>66</value>
+				<outputVariable>
+					<variableId>Rainfall_Depart_66</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Rainfall Compute 75 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Rainfall_Depart</variableId>
+				</inputVariable>
+				<value>75</value>
+				<outputVariable>
+					<variableId>Rainfall_Depart_75</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute Mean">
+		<statisticsEnsemble>
+			<mean>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temperature_Depart_mean</variableId>
+				</outputVariable>
+			</mean>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute Maximum">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temperature_Depart_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute Minimum">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temperature_Depart_min</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute 25 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<value>25</value>
+				<outputVariable>
+					<variableId>Temperature_Depart_25</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute 33 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<value>33</value>
+				<outputVariable>
+					<variableId>Temperature_Depart_33</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute 66 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<value>66</value>
+				<outputVariable>
+					<variableId>Temperature_Depart_66</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Temperature Compute 75 percentile">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>Temperature_Depart</variableId>
+				</inputVariable>
+				<value>75</value>
+				<outputVariable>
+					<variableId>Temperature_Depart_75</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+</transformationModule>

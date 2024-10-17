@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<importArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/importArchiveModule.xsd">
+	<importSimulated>
+		<timeSeriesSetIdMap>IdArchiveImportStation</timeSeriesSetIdMap>
+		<importFolder>$ARCHIVE_DOWNLOAD_FOLDER$/simulated</importFolder>
+	</importSimulated>
+	<importExternalForecast>
+		<timeSeriesSetIdMap>IdArchiveImportStation</timeSeriesSetIdMap>
+		<importFolder>$ARCHIVE_DOWNLOAD_FOLDER$/externalforecasts</importFolder>
+	</importExternalForecast>
+	<importObserved>
+		<timeSeriesSetIdMap>IdArchiveImportStation</timeSeriesSetIdMap>
+		<importFolder>$ARCHIVE_DOWNLOAD_FOLDER$/observed</importFolder>
+	</importObserved>
+	<importMessages>
+		<importFolder>$ARCHIVE_DOWNLOAD_FOLDER$/messages</importFolder>
+	</importMessages>
+	<importRatingCurves>
+		<importFolder>$ARCHIVE_DOWNLOAD_FOLDER$/ratingcurves</importFolder>
+	</importRatingCurves>
+</importArchiveModule>

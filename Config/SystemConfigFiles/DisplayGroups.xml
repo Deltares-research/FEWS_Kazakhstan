@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<displayGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/displayGroups.xsd">
+	<plot id="Rainfall_plot">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>T.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>T.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="3"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.obs</parameterId>
+				<qualifierId>GPM</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-2" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.forecast</parameterId>
+				<qualifierId>GFS</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="3"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+	</plot>
+	<plot id="Rainfall_Ensemble_plot">
+		<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+		<visibilityGroup>Ensemble Plumes</visibilityGroup>
+		<subplot>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<color>light blue</color>
+				<lineStyle>solid</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>GEFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEFS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>blue violet</color>
+				<lineStyle>solid;thick</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>black</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>black</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>red</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>steel blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>sky blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>33</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>T.forecast</parameterId>
+					<qualifierId>66</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<color>light blue</color>
+				<lineStyle>solid</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GEFS</qualifierId>
+					<qualifierId>Accum</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEFS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<qualifierId>Accum</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Spaghetti</visibilityGroup>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>blue violet</color>
+				<lineStyle>solid;thick</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<qualifierId>Accum</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>black</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>black</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>red</color>
+				<lineStyle>dashed</lineStyle>
+				<visibleInLegend>true</visibleInLegend>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>steel blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<visibilityGroup>Ensemble Plumes</visibilityGroup>
+				<color>sky blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>33</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Ensemble_Statistics</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>66</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<displayGroup id="Rainfall_Display" name="Rainfall Display">
+		<singleLocationDisplays>
+			<relativeViewPeriod unit="day" start="-1" end="5"/>
+			<locationSetId>GADM2</locationSetId>
+			<plotId>Rainfall_plot</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="Rainfall_Display_Ensemble" name="Rainfall Display Ensemble">
+		<singleLocationDisplays>
+			<relativeViewPeriod unit="day" start="-1" end="5"/>
+			<locationSetId>GADM2</locationSetId>
+			<plotId>Rainfall_Ensemble_plot</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+</displayGroups>

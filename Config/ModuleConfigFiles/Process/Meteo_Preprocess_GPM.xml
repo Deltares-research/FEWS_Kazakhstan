@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>Rain_grid_GPM_World</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>IMERG_world</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-13" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_grid_GPM_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-13" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_grid_GPM</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-13" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="Rain_interpolate_workgrid_GPM">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Rain_grid_GPM_World</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_grid_GPM_temp</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Merge_interpolated_workgrid_GPM">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Rain_grid_GPM</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Rain_grid_GPM_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_grid_GPM</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

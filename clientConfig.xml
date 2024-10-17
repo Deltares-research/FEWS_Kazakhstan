@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientConfiguration xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/clientConfig.xsd">
+	<clientType>Stand alone</clientType>
+	<otherRootConfigFiles>
+		<name>patch.jar</name>
+		<name>fews-splash.jpg</name>
+		<name>dashboards.ini</name>
+	</otherRootConfigFiles>
+	<jvmOption>-Xms512m</jvmOption>
+	<jvmOption>-Xmx1024m</jvmOption>
+	<jvmOption>-DautoRollingBarrel=false</jvmOption>
+	<jvmOption>-DminimalTimeSeriesCacheSizeMB=50</jvmOption>
+	<logging>
+		<debugEnabled>false</debugEnabled>
+	</logging>
+	<warmStatesDirectory>%REGION_HOME%/warmStates</warmStatesDirectory>
+	<autoExportModuleDataSet name="jcef" exportDir="Modules"/>
+	<autoExportModuleDataSet name="talsim-ng" exportDir="Modules"/>
+</clientConfiguration>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
+	<regular locationId="radar">
+		<rows>1038</rows>
+		<columns>1038</columns>
+		<geoDatum>EPSG:32643</geoDatum>
+		<firstCellCenter>
+			<x>511423.465184723725542</x>
+			<y>5250753.429799459874630</y>
+		</firstCellCenter>
+		<xCellSize>500</xCellSize>
+		<yCellSize>500</yCellSize>
+	</regular>
+	<regular locationId="GFS_world">
+		<rows>361</rows>
+		<columns>720</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>0</x>
+			<y>90</y>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
+	<regular locationId="GFS">
+		<rows>60</rows>
+		<columns>184</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44</x>
+			<y>55</y>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="GEFS">
+		<rows>30</rows>
+		<columns>92</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44</x>
+			<y>55</y>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
+	<regular locationId="IMERG_world">
+		<rows>1800</rows>
+		<columns>3600</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-179.95</x>
+			<y>89.95</y>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	<regular locationId="IMERG">
+		<rows>150</rows>
+		<columns>460</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44.05</x>
+			<y>55.05</y>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	<regular locationId="GSMAP_world">
+		<rows>1200</rows>
+		<columns>3600</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>0.05</x>
+			<y>59.95</y>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	<regular locationId="GSMAP">
+		<rows>150</rows>
+		<columns>460</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44.05</x>
+			<y>55.05</y>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	<regular locationId="E2O_25">
+		<rows>60</rows>
+		<columns>184</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44.125</x>
+			<y>55.125</y>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="E2O_5">
+		<rows>30</rows>
+		<columns>92</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44.25</x>
+			<y>55.25</y>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
+	<regular locationId="WW3">
+		<rows>15</rows>
+		<columns>36</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>43.75</x>
+			<y>55.00</y>
+		</firstCellCenter>
+		<xCellSize>1.25</xCellSize>
+		<yCellSize>1.00</yCellSize>
+	</regular>
+	<regular locationId="HYCOM.Area">
+		<rows>187</rows>
+		<columns>575</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>44.16</x>
+			<y>55.6</y>
+		</firstCellCenter>
+		<xCellSize>0.08</xCellSize>
+		<yCellSize>0.08</yCellSize>
+	</regular>
+</grids>

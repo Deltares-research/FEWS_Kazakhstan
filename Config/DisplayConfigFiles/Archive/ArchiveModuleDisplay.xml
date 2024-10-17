@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archiveModuleDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/archiveModuleDisplay.xsd">
+	<levelThresholds>
+		<levelThresholdId>Alert Level</levelThresholdId>
+		<levelThresholdId>Major Flood Level</levelThresholdId>
+	</levelThresholds>
+	<defaultHistoricalEventTimeStep unit="hour" multiplier="1"/>
+	<workFolder>$ARCHIVE_DOWNLOAD_FOLDER$/workdir</workFolder>
+	<disableDataDownloadAtOperatorClient>true</disableDataDownloadAtOperatorClient>
+	<downloadFolders>
+		<downloadFolderObserved>$ARCHIVE_DOWNLOAD_FOLDER$/observed</downloadFolderObserved>
+		<downloadFolderSimulated>$ARCHIVE_DOWNLOAD_FOLDER$/simulated</downloadFolderSimulated>
+		<downloadFolderExternalForecasts>$ARCHIVE_DOWNLOAD_FOLDER$/externalforecasts</downloadFolderExternalForecasts>
+		<downloadFolderRatingCurves>$ARCHIVE_DOWNLOAD_FOLDER$/ratingcurves</downloadFolderRatingCurves>
+		<downloadFolderHistoricalEvents>$ARCHIVE_DOWNLOAD_FOLDER$/historicalevents</downloadFolderHistoricalEvents>
+		<downloadFolderForecasterNotes>$ARCHIVE_DOWNLOAD_FOLDER$/messages</downloadFolderForecasterNotes>
+		<downloadFolderConfiguration>$ARCHIVE_DOWNLOAD_FOLDER$/configuration</downloadFolderConfiguration>
+		<downloadFolderEventAttachments>$ARCHIVE_DOWNLOAD_FOLDER$/attachments</downloadFolderEventAttachments>
+	</downloadFolders>
+	<archiveImportWorkflowId>Archive_Import_Data</archiveImportWorkflowId>
+</archiveModuleDisplay>

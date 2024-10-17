@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--GFS forecasts plus GMP satellite -->
+	<variable>
+		<variableId>Rain_grid_GFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_grid_GFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_grid_GFS_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_grid_GFS_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_scalar_GFS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>meteo_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_scalar_GFS_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>meteo_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GFS_GADM2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GFS_GADM2_Accum</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<qualifierId>Accum</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GFS_GADM2_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GFS_GADM2_Accum_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<qualifierId>Accum</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_catchment_GFS_GADM2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_catchment_GFS_GADM2_10day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_grid_GPM</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>Early</qualifierId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-24" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_scalar_GPM</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>meteo_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-24" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GPM_GADM2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="hour" start="-24" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_catchment_GPM_GADM2_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="Rain_interpolate_GFS">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Rain_grid_GFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_scalar_GFS</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Rain_interpolate_GFS_10days">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Rain_grid_GFS_10day</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_scalar_GFS_10day</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Rain_catchment_GFS_GADM2">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Rain_grid_GFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GFS_GADM2</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Rain_catchment_GFS_GADM2_10day">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Rain_grid_GFS_10day</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GFS_GADM2_10day</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Temp_catchment_GFS_GADM2">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Temp_grid_GFS</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temp_catchment_GFS_GADM2</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Temp_catchment_GFS_GADM2_10day">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Temp_grid_GFS_10day</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temp_catchment_GFS_GADM2_10day</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Accumulate rainfall data per catchment">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Rain_catchment_GFS_GADM2</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GFS_GADM2_Accum</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+	<transformation id="Accumulate rainfall data per catchment 10 day">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Rain_catchment_GFS_GADM2_10day</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GFS_GADM2_Accum_10day</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+	<transformation id="Rain_interpolate_GPM">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Rain_grid_GPM</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_scalar_GPM</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Rain_catchment_GPM_GADM2">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Rain_grid_GPM</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GPM_GADM2</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Rain_catchment_GPM_GADM2_1hr">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Rain_catchment_GPM_GADM2</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_catchment_GPM_GADM2_1hr</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://gpm1.gesdisc.eosdis.nasa.gov/opendap/hyrax/GPM_L3/GPM_3IMERGHHE.06/%RELATIVE_TIME_IN_SECONDS(yyyy,-86400)%/%RELATIVE_TIME_IN_SECONDS(DDD,-86400)%/catalog.xml</serverUrl>
+			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
+			<user>fews.gpm</user>
+			<password>247FewsGpm</password>
+			<idMapId>IdImportGPM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-999</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>GPMIMERG.Server.Precipitation</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>Early</qualifierId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.obs" unit="mm/hr"/>
+	</import>
+	<!--<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://gpm1.gesdisc.eosdis.nasa.gov/opendap/hyrax/GPM_L3/GPM_3IMERGHHL.06/%RELATIVE_TIME_IN_SECONDS(yyyy,-86400)%/%RELATIVE_TIME_IN_SECONDS(DDD,-86400)%/catalog.xml</serverUrl>
+			<fileNameObservationDateTimePattern>'3B-HHR-L.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
+			<user>fews.gpm</user>
+			<password>247FewsGpm</password>
+			<idMapId>IdImportGPM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-999</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>Late</qualifierId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.obs" unit="mm/hr"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://gpm1.gesdisc.eosdis.nasa.gov/opendap/hyrax/GPM_L3/GPM_3IMERGHH.06/%RELATIVE_TIME_IN_SECONDS(yyyy,-86400)%/%RELATIVE_TIME_IN_SECONDS(DDD,-86400)%/catalog.xml</serverUrl>
+			<fileNameObservationDateTimePattern>'3B-HHR.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
+			<user>fews.gpm</user>
+			<password>247FewsGpm</password>
+			<relativeViewPeriod unit="hour" start="-12" end="0" startOverrulable="true" endOverrulable="false"/>
+			<idMapId>IdImportGPM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-999</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>Final</qualifierId>
+			<locationId>IMERG</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.obs" unit="mm/hr"/>
+	</import>-->
+</timeSeriesImportRun>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>GFS_Rain_Copy</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Copy_GFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GFS_Rain_Modified</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Modify_GFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="2"/>
+		</timeSeriesSet>
+	</variable>
+	<!--Copy Modified rainfall grid to Persistent rainfall grid.-->
+	<transformation id="Copy_modified_2persistent_precip">
+		<user>
+			<simple>
+				<expression>GFS_Rain_Copy</expression>
+				<outputVariable>
+					<variableId>GFS_Rain_Modified</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

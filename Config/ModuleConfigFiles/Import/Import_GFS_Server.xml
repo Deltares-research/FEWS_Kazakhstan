@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25_1hr/gfs%TIME_ZERO(yyyyMMdd)%/gfs_0p25_1hr_%TIME_ZERO(HH)%z</serverUrl>
+			<!--<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25/gfs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd, -18000 )%/gfs_0p25_1hr_%RELATIVE_TIME_IN_SECONDS(HH,-18000)%z</serverUrl>-->
+			<idMapId>IdImportGFS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>GFS.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="7"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>WS.u.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>WS.v.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<externUnit parameterId="P.forecast" unit="mm" cumulativeSum="true"/>
+		<externUnit parameterId="T.forecast" unit="K"/>
+		<externUnit parameterId="WS.u.forecast" unit="m/s"/>
+		<externUnit parameterId="WS.v.forecast" unit="m/s"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25/gfs%TIME_ZERO(yyyyMMdd)%/gfs_0p25_%TIME_ZERO(HH)%z</serverUrl>
+			<idMapId>IdImportGFS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>GFS.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="7"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>WS.u.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>WS.v.forecast</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<externUnit parameterId="P.forecast" unit="mm" cumulativeSum="true"/>
+		<externUnit parameterId="T.forecast" unit="K"/>
+		<externUnit parameterId="WS.u.forecast" unit="m/s"/>
+		<externUnit parameterId="WS.v.forecast" unit="m/s"/>
+	</import>
+</timeSeriesImportRun>

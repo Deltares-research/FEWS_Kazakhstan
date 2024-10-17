@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+  <import>
+		<general>
+		   <importType>generalCSV</importType>
+			<serverUrl>https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/%TIME_ZERO(yyyy)%/$LOOP_LOCATION_ID$.csv</serverUrl>
+		   <table>
+			  <dateTimeColumn name="DATE" pattern="yyyy-MM-dd"/>
+			  <locationColumn name="STATION"/>
+			  <valueColumn name="PRCP" parameterId="P.obs" unit="mm"/>
+			  <valueColumn name="MAX" parameterId="Tmax.obs" unit="oC" />
+			  <valueColumn name="MIN" parameterId="Tmin.obs" unit="oC" />
+		   </table>
+		   <missingValue>99.99</missingValue>
+		   <importTimeZone>
+			  <timeZoneOffset>+03:00</timeZoneOffset>
+		   </importTimeZone>
+		   <dataFeedId>GSOD.Precipitation</dataFeedId>
+		   <columnSeparator>,</columnSeparator>
+		   <decimalSeparator>.</decimalSeparator>	   
+		</general>
+	<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+				<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		
+</import>
+</timeSeriesImportRun>

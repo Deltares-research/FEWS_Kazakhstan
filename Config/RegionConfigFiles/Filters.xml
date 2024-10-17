@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
+	<defaultFilterId>Basins_All</defaultFilterId>
+	<filter id="Kazakhstan">
+		<mapExtentId>Kazakhstan</mapExtentId>
+		<child foreignKey="Meteo_All"/>
+		<child foreignKey="GRDC_All"/>
+		<child foreignKey="Basins_Ensemble"/>
+	</filter>
+	<filter id="Models">
+		<child foreignKey="Basins_All"/>
+		<child foreignKey="Basins_out"/>
+	</filter>
+	<filter id="Meteo_All" name="Rainfall stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GSOD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<!--<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>-->
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>GSOD_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="GRDC_All" name="GRDC stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_GRDC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<qualifierId>Day_Cmd</qualifierId>
+			<locationSetId>GRDC_stations_shp</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+<!--		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>GRDC_stations_flow</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>WFlow_Yesil_toGauges_Historical</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>GRDC_stations_flow</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>WFlow_Yesil_toGauges_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>GRDC_stations_flow</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>-->
+	</filter>
+	<filter id="Basins_All" name="Basins input data">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SNOW.cm</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_OpenMeteo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SNOW.tot</parameterId>
+			<locationId>35188099999</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="Basins_out" name="Basins result data">
+	<timeSeriesSet>
+		<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
+		<valueType>scalar</valueType>
+		<parameterId>Q.sim</parameterId>
+		<locationSetId>GADM2</locationSetId>
+		<timeSeriesType>simulated historical</timeSeriesType>
+		<timeStep unit="nonequidistant"/>
+		<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+		<readWriteMode>read complete forecast</readWriteMode>
+	</timeSeriesSet>
+	<timeSeriesSet>
+    <moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
+    <valueType>scalar</valueType>
+    <parameterId>Q.forecast</parameterId>
+    <locationSetId>GADM2</locationSetId>
+    <timeSeriesType>simulated forecasting</timeSeriesType>
+    <timeStep unit="nonequidistant"/>
+    <relativeViewPeriod unit="day" start="0" end="+16" startOverrulable="true"/>
+    <readWriteMode>read complete forecast</readWriteMode>
+</timeSeriesSet>
+</filter>
+</filters>

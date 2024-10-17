@@ -1,0 +1,77 @@
+<thresholdValueSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdValueSets.xsd">
+	<!--<thresholdValueSet id="H" name="Level">
+		<levelThresholdValue>
+			<levelThresholdId>AlertLevel</levelThresholdId>
+			<valueFunction>@AlertLevel@</valueFunction>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>MajorFloodLevel</levelThresholdId>
+			<valueFunction>@FloodLevel@</valueFunction>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>all_stations_Level</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>all_stations_Flow</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<stageDischargeConversion>
+			<dischargeParameterId>Q.obs</dischargeParameterId>
+			<dischargeParameterId>Q.sim</dischargeParameterId>
+			<dischargeParameterId>Q.forecast</dischargeParameterId>
+		</stageDischargeConversion>
+	</thresholdValueSet>-->
+	<thresholdValueSet id="P" name="Rainfall">
+		<levelThresholdValue>
+			<levelThresholdId>Rainfall_Med</levelThresholdId>
+			<value>10</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Rainfall_High</levelThresholdId>
+			<value>25</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>meteo_stations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>GPM</qualifierId>
+			<locationSetId>meteo_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+</thresholdValueSets>

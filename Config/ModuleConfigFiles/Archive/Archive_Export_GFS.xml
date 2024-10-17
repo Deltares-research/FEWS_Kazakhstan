@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportArchiveModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/exportArchiveModule.xsd">
+	<exportExternalForecast>
+		<general>
+			<archiveFolder>$ARCHIVE_FOLDER$</archiveFolder>
+			<relativePeriod unit="hour" start="-48" end="0"/>
+			<idMapId>IdArchive</idMapId>
+		</general>
+		<activities>
+			<netcdfExportActivities>
+				<netcdfExportActivity>
+					<fileName>GFS_DET.nc</fileName>
+					<areaId>$AREA$</areaId>
+					<sourceId>GFS</sourceId>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P.forecast</parameterId>
+						<locationId>GFS</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>T.forecast</parameterId>
+						<locationId>GFS</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>WS.u.forecast</parameterId>
+						<locationId>GFS</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>WS.v.forecast</parameterId>
+						<locationId>GFS</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</netcdfExportActivity>
+			</netcdfExportActivities>
+		</activities>
+	</exportExternalForecast>
+</exportArchiveModule>

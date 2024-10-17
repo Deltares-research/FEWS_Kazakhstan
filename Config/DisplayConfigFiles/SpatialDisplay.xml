@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+	<title>Astana Spatial Data Display</title>
+	<defaults>
+		<parameterGroupId>Precipitation</parameterGroupId>
+		<classBreaks>
+			<description>Precipitation [mm], default</description>
+			<unitVisible>true</unitVisible>
+			<break color="FFFFFF" lowerValue="0" opaquenessPercentage="20"/>
+			<break color="99E9FF" lowerValue="0.2" opaquenessPercentage="50"/>
+			<break color="00C8FF" lowerValue="1" opaquenessPercentage="50"/>
+			<break color="0053FF" lowerValue="5" opaquenessPercentage="50"/>
+			<break color="00956A" lowerValue="10" opaquenessPercentage="50"/>
+			<break color="00FA10" lowerValue="25" opaquenessPercentage="50"/>
+			<break color="FFBF00" lowerValue="50" opaquenessPercentage="50"/>
+			<break color="FF8F00" lowerValue="75" opaquenessPercentage="50"/>
+			<break color="FF0000" lowerValue="100" opaquenessPercentage="50"/>
+			<break color="960000" lowerValue="200" opaquenessPercentage="50"/>
+			<break color="FF00CC" lowerValue="400" opaquenessPercentage="50"/>
+		</classBreaks>
+		<classBreaks>
+			<description>Precipitation [mm], alternative</description>
+			<unitVisible>true</unitVisible>
+			<color color="736F6E" lowerValue="0.00" opaquenessPercentage="20" colorSmoothingEnabled="true"/>
+			<color color="129FFE" lowerValue="0.01" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="4040FF" lowerValue="0.75" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="00FF40" lowerValue="1.5" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="FFFF00" lowerValue="2.5" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="FF8000" lowerValue="7.5" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="FF0000" lowerValue="15.0" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="FF0080" lowerValue="22.5" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="black" lowerValue="27.5" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+			<color color="white" lowerValue="30.0" opaquenessPercentage="70" colorSmoothingEnabled="true"/>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Temperature</parameterGroupId>
+		<classBreaks>
+			<lowerColor>deep sky blue</lowerColor>
+			<upperColor>blue</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>-40</lowerValue>
+			<lowerValue>-35</lowerValue>
+			<lowerValue>-30</lowerValue>
+			<lowerValue>-25</lowerValue>
+			<lowerValue>-20</lowerValue>
+			<lowerColor>blue</lowerColor>
+			<upperColor>light yellow</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>-15</lowerValue>
+			<lowerValue>-10</lowerValue>
+			<lowerValue>-5</lowerValue>
+			<lowerValue>0</lowerValue>
+			<lowerColor>light yellow</lowerColor>
+			<upperColor>orange</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>5</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerColor>orange</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>20</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>30</lowerValue>
+			<lowerValue>35</lowerValue>
+			<lowerValue>40</lowerValue>
+			<lowerValue>45</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Evaporation</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="white" lowerValue="0"/>
+			<lowerColor>lavender blush2</lowerColor>
+			<upperColor>royal blue4</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>0.5</lowerValue>
+			<lowerValue>1.0</lowerValue>
+			<lowerValue>2.0</lowerValue>
+			<lowerValue>3.0</lowerValue>
+			<lowerValue>4.0</lowerValue>
+			<lowerValue>5.0</lowerValue>
+			<lowerColor>royal blue4</lowerColor>
+			<upperColor>orange</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>7.5</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>12.5</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerValue>20</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Waterlevel</parameterGroupId>
+		<parameterGroupId>Waterdepth</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="dark sea green" lowerValue="-1.51"/>
+			<lowerColor>dark sea green</lowerColor>
+			<upperColor>white</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>-1.5</lowerValue>
+			<lowerValue>-1</lowerValue>
+			<lowerValue>-0.5</lowerValue>
+			<lowerValue>-0.3</lowerValue>
+			<lowerValue>-0.2</lowerValue>
+			<lowerValue>-0.1</lowerValue>
+			<lowerValue>-0.002</lowerValue>
+			<color opaquenessPercentage="50" color="white" lowerValue="0"/>
+			<lowerColor>light blue</lowerColor>
+			<upperColor>blue</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>0.002</lowerValue>
+			<lowerValue>0.1</lowerValue>
+			<lowerValue>0.2</lowerValue>
+			<lowerValue>0.3</lowerValue>
+			<lowerValue>0.5</lowerValue>
+			<lowerValue>1</lowerValue>
+			<lowerValue>1.5</lowerValue>
+			<lowerColor>blue</lowerColor>
+			<upperColor>yellow</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>2</lowerValue>
+			<lowerValue>2.5</lowerValue>
+			<lowerValue>3</lowerValue>
+			<lowerColor>yellow</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>3.5</lowerValue>
+			<lowerValue>4</lowerValue>
+			<lowerValue>4.5</lowerValue>
+			<lowerValue>5</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Discharge</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="white" lowerValue="5"/>
+			<lowerColor>lavender blush2</lowerColor>
+			<upperColor>royal blue4</upperColor>
+			<lowerValue>6</lowerValue>
+			<lowerValue>7</lowerValue>
+			<lowerValue>8</lowerValue>
+			<lowerValue>9</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerValue>20</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>30</lowerValue>
+			<lowerColor>royal blue4</lowerColor>
+			<upperColor>yellow</upperColor>
+			<lowerValue>35</lowerValue>
+			<lowerValue>40</lowerValue>
+			<lowerValue>45</lowerValue>
+			<lowerValue>50</lowerValue>
+			<lowerValue>75</lowerValue>
+			<lowerValue>100</lowerValue>
+			<lowerValue>200</lowerValue>
+			<lowerValue>300</lowerValue>
+			<lowerValue>400</lowerValue>
+			<lowerColor>orange</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerValue>500</lowerValue>
+			<lowerValue>750</lowerValue>
+			<lowerValue>1000</lowerValue>
+			<lowerValue>1250</lowerValue>
+			<lowerValue>1500</lowerValue>
+			<lowerValue>2000</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Wind speed</parameterGroupId>
+		<classBreaks>
+			<lowerColor>green</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerSymbolSize>10</lowerSymbolSize>
+			<upperSymbolSize>30</upperSymbolSize>
+			<lowerValue>0</lowerValue>
+			<lowerValue>0.3</lowerValue>
+			<lowerValue>1.6</lowerValue>
+			<lowerValue>3.4</lowerValue>
+			<lowerValue>5.5</lowerValue>
+			<lowerValue>8.0</lowerValue>
+			<lowerValue>10.8</lowerValue>
+			<lowerValue>13.9</lowerValue>
+			<lowerValue>17.2</lowerValue>
+			<lowerValue>20.8</lowerValue>
+			<lowerValue>24.5</lowerValue>
+			<lowerValue>28.5</lowerValue>
+			<lowerValue>32.6</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<plotGroupId>Satellite precipitation</plotGroupId>
+		<plotGroupId>GFS</plotGroupId>
+		<plotGroupId>Modify NWP</plotGroupId>
+		<plotGroupId>WW3</plotGroupId>
+		<plotGroupId>HYCOM</plotGroupId>
+		<plotGroupId>Eart2Observe</plotGroupId>
+		<plotGroupId>WFLOW</plotGroupId>
+		<plotGroupId>WFLOW_fractions</plotGroupId>
+		<modifiedColor>dark slate gray</modifiedColor>
+		<geoMap>
+			<geoDatum>WGS 1984</geoDatum>
+			<projection>web_mercator</projection>
+			<defaultExtent id="Astana">
+				<left>44.16</left>
+				<right>90.21</right>
+				<top>55.63</top>
+				<bottom>40.14</bottom>
+			</defaultExtent>
+			<extraExtent id="World">
+				<left>-180</left>
+				<right>180</right>
+				<top>90</top>
+				<bottom>-70</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<backgroundColor>white</backgroundColor>
+			<layerGroup id="World">
+				<openStreetMapLayer id="Open Street Map (hot)">
+					<url>http://a.tile.openstreetmap.fr/hot</url>
+					<visible>true</visible>
+					<cacheDir>$CACHE_FOLDER$/OSMHOT</cacheDir>
+				</openStreetMapLayer>
+				<openStreetMapLayer id="Open Street Map">
+					<url>http://tile.openstreetmap.org</url>
+					<visible>true</visible>
+					<cacheDir>$CACHE_FOLDER$/OSM</cacheDir>
+				</openStreetMapLayer>
+				<layer id="Satellite">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://h%RIGHT(QUAD_KEY,1)%.ortho.tiles.virtualearth.net/tiles/h%QUAD_KEY%.jpeg?g=1"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/Satellite_Cache"/>
+						<int key="minZoomLevel" value="2"/>
+						<int key="maxZoomLevel" value="17"/>
+						<int key="topZoomLevel" value="19"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<layer id="Topografie" name="ArcGIS World Topo Map">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/Esri_topo"/>
+						<int key="minZoomLevel" value="1"/>
+						<int key="maxZoomLevel" value="19"/>
+						<int key="topZoomLevel" value="21"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/Esri_Canvas_World_Light_Gray_Base"/>
+						<int key="minZoomLevel" value="1"/>
+						<int key="maxZoomLevel" value="19"/>
+						<int key="topZoomLevel" value="21"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<layer id="World" name="ArcGIS World Satellite Map">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/World_Imagery"/>
+						<int key="minZoomLevel" value="1"/>
+						<int key="maxZoomLevel" value="19"/>
+						<int key="topZoomLevel" value="21"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<layer id="NatGeo_World_Map" name="ArcGIS Physical Map">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/NatGeo_World_Map"/>
+						<int key="minZoomLevel" value="1"/>
+						<int key="maxZoomLevel" value="14"/>
+						<int key="topZoomLevel" value="18"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<layer id="World_Shaded_Relief" name="ArcGIS Shaded Relief">
+					<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+					<visible>false</visible>
+					<properties>
+						<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+						<string key="cacheDir" value="$CACHE_FOLDER$/World_Shaded_Relief"/>
+						<int key="minZoomLevel" value="1"/>
+						<int key="maxZoomLevel" value="14"/>
+						<int key="topZoomLevel" value="21"/>
+						<int key="tileSize" value="256"/>
+					</properties>
+				</layer>
+				<wmsLayer id="srtmv4.1_s0_pyramidal_color">
+					<url>http://www.webservice-energy.org/mapserv/srtm?</url>
+					<wmsLayerName>srtmv4.1_s0_pyramidal_color</wmsLayerName>
+					<visible>false</visible>
+					<cacheDir>$CACHE_FOLDER$/WMSLayers/srtmv4.1_s0_pyramidal_color</cacheDir>
+				</wmsLayer>
+				<esriShapeLayer id="World">
+					<description>World</description>
+					<file>cntry98.shp</file>
+					<geoDatum>WGS 1984</geoDatum>
+					<visible>false</visible>
+					<toolTip>%CNTRY_NAME%</toolTip>
+					<lineColor>black</lineColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>20</opaquenessPercentage>
+				</esriShapeLayer>
+			</layerGroup>
+		</geoMap>
+		<timeDisplayLabels>bottomRight</timeDisplayLabels>
+		<commentPositioning>topLeft</commentPositioning>
+	</defaults>
+	<gridPlotGroup id="Satellite precipitation" name="Satellite precipitation">
+		<gridPlot id="Rain_gpm_grid_early" name="Precipitation GPM Early [mm]">
+			<dataFeedId>GPMIMERG.Server.Precipitation</dataFeedId>
+			<timeSeriesSet>
+				<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.obs</parameterId>
+				<qualifierId>Early</qualifierId>
+				<locationId>IMERG</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="30"/>
+				<relativeViewPeriod unit="day" start="-4" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_gpm_catch" name="Precipitation GPM Catchments [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.obs</parameterId>
+				<qualifierId>GPM</qualifierId>
+				<locationSetId>GADM2</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-4" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="GFS" name="GFS Forecasts">
+		<gridPlot id="Rain_forecast_nwp_1hr" name="Rainfall Forecast (5 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Temp_forecast_nwp_1hr" name="Temperature Forecast (5 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Wind_forecast_nwp_1hr" name="Wind Forecast (5 days)">
+			<dataLayer>
+				<arrowColor>black</arrowColor>
+				<arrowSymbol>flow</arrowSymbol>
+				<arrowDirection>from</arrowDirection>
+				<multipleArrowsPerValue>false</multipleArrowsPerValue>
+				<arrowMinimumPixelDistanceBetweenTwoCellCenters>2</arrowMinimumPixelDistanceBetweenTwoCellCenters>
+				<uTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.u.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</uTimeSeriesSet>
+				<vTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.v.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</vTimeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_forecast_catch_1hr" name="Rainfall Forecast Catchments (5 days)">
+			<displayGroupPlotId>Rainfall_plot</displayGroupPlotId>
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_forecast_nwp" name="Rainfall Forecast (10 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Temp_forecast_nwp" name="Temperature Forecast (10 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Wind_forecast_nwp" name="Wind Forecast (10 days)">
+			<dataLayer>
+				<arrowColor>black</arrowColor>
+				<arrowSymbol>flow</arrowSymbol>
+				<arrowDirection>from</arrowDirection>
+				<multipleArrowsPerValue>false</multipleArrowsPerValue>
+				<arrowMinimumPixelDistanceBetweenTwoCellCenters>2</arrowMinimumPixelDistanceBetweenTwoCellCenters>
+				<uTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.u.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</uTimeSeriesSet>
+				<vTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.v.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</vTimeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_forecast_catch" name="Rainfall Forecast Catchments (10 days)">
+			<displayGroupPlotId>Rainfall_plot</displayGroupPlotId>
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_forecast_grid_ensemble" name="Rainfall Forecast (Ensemble, 16 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GEFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.forecast</parameterId>
+					<locationId>GEFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="6" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEFS</ensembleId>
+					<ensembleMemberIndexRange start="0" end="30"/>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Temp_forecast_grid_ensemble" name="Temperature Forecast (Ensemble, 16 days)">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GEFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.forecast</parameterId>
+					<locationId>GEFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="6" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEFS</ensembleId>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Rain_forecast_catch_ensemble" name="Rainfall Forecast Catchments (Ensemble, 16 days)">
+			<displayGroupPlotId>Rainfall_Ensemble_plot</displayGroupPlotId>
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Meteo_Process_Operational_Grids</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.forecast</parameterId>
+					<qualifierId>GEFS</qualifierId>
+					<locationSetId>GADM2</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="6" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEFS</ensembleId>
+					<ensembleMemberIndexRange start="0" end="30"/>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>4</numberOfRecentForecasts>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="Modify NWP" name="Modify NWP">
+		<gridPlot id="BE_GFS_P" name="Best estimate GFS (Compose)">
+			<timeSeriesSet>
+				<moduleInstanceId>Copy_GFS</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.forecast</parameterId>
+				<locationId>GFS</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep multiplier="1" unit="hour"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</gridPlot>
+		<gridPlot id="BE_GFS_P_current" name="Best estimate GFS (Current)">
+			<timeSeriesSet>
+				<moduleInstanceId>Modify_GFS</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.forecast</parameterId>
+				<locationId>GFS</locationId>
+				<timeSeriesType>simulated forecasting</timeSeriesType>
+				<timeStep multiplier="1" unit="hour"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="kaz_radar" name="Radar Measurements">
+		<gridPlot id="kaz_radar_act" name="Radar Measurements by station XX">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_radar_file</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.obs</parameterId>
+					<locationId>radar</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<numberOfRecentForecasts>2</numberOfRecentForecasts>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+</gridDisplay>

@@ -13,7 +13,6 @@
 	<logging>
 		<debugEnabled>false</debugEnabled>
 	</logging>
-	<warmStatesDirectory>%REGION_HOME%/warmStates</warmStatesDirectory>
 	<autoExportModuleDataSet name="jcef" exportDir="Modules"/>
 	<autoExportModuleDataSet name="talsim-ng" exportDir="Modules"/>
 </clientConfiguration>

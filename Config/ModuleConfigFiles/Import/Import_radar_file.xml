@@ -5,7 +5,8 @@
          <importType>GeoTiff</importType>
          <folder>$REGION_HOME$/Import/radar</folder>
          <!--01_10_00_000000000_default.tif-->
-             <fileNameObservationDateTimePattern>HH_mm_ss_yyyyMMdd'_default.tif'</fileNameObservationDateTimePattern>
+             <fileNameObservationDateTimePattern>yyyyMMdd_HH_mm_ss'_sweep2_radar_rainfall.tif'</fileNameObservationDateTimePattern>
+            <!--20240818_11_30_00_sweep2_radar_rainfall.tif-->
          <missingValue>-9999</missingValue>
          <dataFeedId>radar.Precipitation</dataFeedId>
          </general>

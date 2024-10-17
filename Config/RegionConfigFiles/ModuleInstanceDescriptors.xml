@@ -19,6 +19,9 @@
 	<moduleInstanceDescriptor id="Import_OpenMeteo">
 		<description>Import CSV File from OpenMeteo</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_OpenMeteo_download">
+		<description>downloads OpenMeteo and saves results to csv</description>
+	</moduleInstanceDescriptor>
 <!--	<moduleInstanceDescriptor id="Import_E2O_Server">
 		<description>Import Earth2Observe from OpenDap server</description>
 	</moduleInstanceDescriptor>-->

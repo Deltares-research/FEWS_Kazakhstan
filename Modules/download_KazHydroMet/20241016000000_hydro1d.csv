@@ -1,0 +1,3 @@
+post_id,date,Q_08,Q_mean,Q,level_mean,level_20,level_08,water_code_status_1,water_code_status_2
+11002,2024-01-01,null,null,null,265.0,265.0,265.0,600,null
+11025,2024-01-01,null,null,null,109.0,109.0,109.0,51301,51901.0

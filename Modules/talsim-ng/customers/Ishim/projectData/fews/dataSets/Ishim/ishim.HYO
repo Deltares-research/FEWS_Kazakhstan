@@ -1,0 +1,11 @@
+*Hydrologie (Verdunstung) (*.hyo) (CalcMode: 1=Penman, 2=Haude, 3=Turc, 4=Blaney-Criddle)
+*================================
+[SETTINGS]
+VERSION=1.5
+*|-----|--------------|-----------------------------|-----------------------------|-----------------------------|-----
+*| ETp | Calc Breiten |      Luftfeuchte [%]        |       Sonnenschein [h]      |    Wind in 3m Hoehe [m/s]   |Description
+*| ID  | Mode  Grad   | Mode Mean JGG WGG TGG ZREID | Mode Mean JGG WGG TGG ZREID | Mode Mean JGG WGG TGG ZREID |
+*|     | 1-3     °    | 1/2   %    -   -   -    -   | 1/2   h    -   -   -    -   | 1/2  m/s   -   -   -    -   |
+*|-<->-|-<->--<----->-|-<->-<--->-<->-<->-<->-<--->-|-<->-<--->-<->-<->-<->-<--->-|-<->-<--->-<->-<->-<->-<--->-|<----
+ |   1 |  4        51 |   1    70                   |   1     5                   |   1     1                   |PET Blaney Criddle
+*|-<->-|-<->--<----->-|-<->-<--->-<->-<->-<->-<--->-|-<->-<--->-<->-<->-<->-<--->-|-<->-<--->-<->-<->-<->-<--->-|<----

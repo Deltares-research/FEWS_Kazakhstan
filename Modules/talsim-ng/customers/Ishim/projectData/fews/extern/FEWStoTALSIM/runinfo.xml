@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Run xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI" xsi:schemaLocation="http://www.wldelft.nl/fews/PI https://fewsdocs.deltares.nl/schemas/version1.0/pi-schemas/pi_run.xsd" version="1.5">
+    <timeZone>0.0</timeZone>
+    <startDateTime date="2024-08-22" time="08:00:00"/>
+    <endDateTime date="2024-09-08" time="00:00:00"/>
+    <time0 date="2024-08-23" time="08:00:00"/>
+    <lastObservationDateTime date="2024-09-08" time="00:00:00"/>
+    <workDir>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\applications\TalsimFEWSAdapter</workDir>
+    <inputTimeSeriesFile>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\projectData\fews\extern\FEWStoTALSIM\timeseries.xml</inputTimeSeriesFile>
+    <outputDiagnosticFile>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\applications\TalsimFEWSAdapter\log\TalsimFEWSAdapter.log</outputDiagnosticFile>
+    <outputTimeSeriesFile>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\projectData\fews\extern\TALSIMtoFEWS\talsim_results.xml</outputTimeSeriesFile>
+</Run>

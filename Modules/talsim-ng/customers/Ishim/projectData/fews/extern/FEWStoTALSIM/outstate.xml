@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<State xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI" xsi:schemaLocation="http://www.wldelft.nl/fews/PI https://fewsdocs.deltares.nl/schemas/version1.0/pi-schemas/pi_state.xsd" version="1.2">
+    <stateId>default</stateId>
+    <timeZone>0.0</timeZone>
+    <dateTime date="2024-08-09" time="09:00:00"/>
+    <stateLoc type="file">
+        <readLocation>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\projectData\fews\extern\FEWStoTALSIM\ishim.state</readLocation>
+        <writeLocation>D:\FEWS\FEWS_Accelerator\FEWS_Accelerator\Astana_SA\Modules\talsim-ng\customers\Ishim\projectData\fews\extern\TALSIMtoFEWS\ishim.state</writeLocation>
+    </stateLoc>
+</State>

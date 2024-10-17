@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<TimeSeries xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_timeseries.xsd" version="1.10">
+	<timeZone>0.0</timeZone>
+	<series>
+		<header>
+			<type>mean</type>
+			<locationId>S005</locationId>
+			<parameterId>1AB</parameterId>
+			<timeStep unit="nonequidistant"/>
+			<startDate date="2024-08-22" time="08:00:00"/>
+			<endDate date="2024-09-08" time="08:00:00"/>
+			<missVal>-999.0</missVal>
+			<stationName>S005_1AB</stationName>
+			<units>m3/s</units>
+		</header>
+		<event date="2024-08-22" time="08:00:00" value="1.814" flag="2"/>
+		<event date="2024-08-23" time="08:00:00" value="2.939" flag="2"/>
+		<event date="2024-08-24" time="08:00:00" value="6.85" flag="2"/>
+		<event date="2024-08-25" time="08:00:00" value="12.327" flag="2"/>
+		<event date="2024-08-26" time="08:00:00" value="16.208" flag="2"/>
+		<event date="2024-08-27" time="08:00:00" value="17.08" flag="2"/>
+		<event date="2024-08-28" time="08:00:00" value="15.626" flag="2"/>
+		<event date="2024-08-29" time="08:00:00" value="13.062" flag="2"/>
+		<event date="2024-08-30" time="08:00:00" value="10.331" flag="2"/>
+		<event date="2024-08-31" time="08:00:00" value="7.96" flag="2"/>
+		<event date="2024-09-01" time="08:00:00" value="6.134" flag="2"/>
+		<event date="2024-09-02" time="08:00:00" value="4.836" flag="2"/>
+		<event date="2024-09-03" time="08:00:00" value="3.972" flag="2"/>
+		<event date="2024-09-04" time="08:00:00" value="3.557" flag="2"/>
+		<event date="2024-09-05" time="08:00:00" value="3.705" flag="2"/>
+		<event date="2024-09-06" time="08:00:00" value="4.263" flag="2"/>
+		<event date="2024-09-07" time="08:00:00" value="4.818" flag="2"/>
+		<event date="2024-09-08" time="08:00:00" value="5.165" flag="2"/>
+	</series>
+	<series>
+		<header>
+			<type>mean</type>
+			<locationId>S033</locationId>
+			<parameterId>1AB</parameterId>
+			<timeStep unit="nonequidistant"/>
+			<startDate date="2024-08-22" time="08:00:00"/>
+			<endDate date="2024-09-08" time="08:00:00"/>
+			<missVal>-999.0</missVal>
+			<stationName>S033_1AB</stationName>
+			<units>m3/s</units>
+		</header>
+		<event date="2024-08-22" time="08:00:00" value="11.517" flag="2"/>
+		<event date="2024-08-23" time="08:00:00" value="17.168" flag="2"/>
+		<event date="2024-08-24" time="08:00:00" value="37.908" flag="2"/>
+		<event date="2024-08-25" time="08:00:00" value="69.071" flag="2"/>
+		<event date="2024-08-26" time="08:00:00" value="94.32" flag="2"/>
+		<event date="2024-08-27" time="08:00:00" value="104.36" flag="2"/>
+		<event date="2024-08-28" time="08:00:00" value="100.827" flag="2"/>
+		<event date="2024-08-29" time="08:00:00" value="89.272" flag="2"/>
+		<event date="2024-08-30" time="08:00:00" value="74.767" flag="2"/>
+		<event date="2024-08-31" time="08:00:00" value="60.662" flag="2"/>
+		<event date="2024-09-01" time="08:00:00" value="48.609" flag="2"/>
+		<event date="2024-09-02" time="08:00:00" value="39.082" flag="2"/>
+		<event date="2024-09-03" time="08:00:00" value="31.971" flag="2"/>
+		<event date="2024-09-04" time="08:00:00" value="27.567" flag="2"/>
+		<event date="2024-09-05" time="08:00:00" value="26.596" flag="2"/>
+		<event date="2024-09-06" time="08:00:00" value="28.386" flag="2"/>
+		<event date="2024-09-07" time="08:00:00" value="30.776" flag="2"/>
+		<event date="2024-09-08" time="08:00:00" value="32.505" flag="2"/>
+	</series>
+	<series>
+		<header>
+			<type>mean</type>
+			<locationId>SEND</locationId>
+			<parameterId>1AB</parameterId>
+			<timeStep unit="nonequidistant"/>
+			<startDate date="2024-08-22" time="08:00:00"/>
+			<endDate date="2024-09-08" time="08:00:00"/>
+			<missVal>-999.0</missVal>
+			<stationName>SEND_1AB</stationName>
+			<units>m3/s</units>
+		</header>
+		<event date="2024-08-22" time="08:00:00" value="22.696" flag="2"/>
+		<event date="2024-08-23" time="08:00:00" value="31.185" flag="2"/>
+		<event date="2024-08-24" time="08:00:00" value="62.827" flag="2"/>
+		<event date="2024-08-25" time="08:00:00" value="111.429" flag="2"/>
+		<event date="2024-08-26" time="08:00:00" value="152.714" flag="2"/>
+		<event date="2024-08-27" time="08:00:00" value="172.015" flag="2"/>
+		<event date="2024-08-28" time="08:00:00" value="170.686" flag="2"/>
+		<event date="2024-08-29" time="08:00:00" value="156.217" flag="2"/>
+		<event date="2024-08-30" time="08:00:00" value="135.88" flag="2"/>
+		<event date="2024-08-31" time="08:00:00" value="114.789" flag="2"/>
+		<event date="2024-09-01" time="08:00:00" value="95.735" flag="2"/>
+		<event date="2024-09-02" time="08:00:00" value="79.798" flag="2"/>
+		<event date="2024-09-03" time="08:00:00" value="67.129" flag="2"/>
+		<event date="2024-09-04" time="08:00:00" value="58.357" flag="2"/>
+		<event date="2024-09-05" time="08:00:00" value="54.761" flag="2"/>
+		<event date="2024-09-06" time="08:00:00" value="55.651" flag="2"/>
+		<event date="2024-09-07" time="08:00:00" value="58.025" flag="2"/>
+		<event date="2024-09-08" time="08:00:00" value="59.927" flag="2"/>
+	</series>
+</TimeSeries>

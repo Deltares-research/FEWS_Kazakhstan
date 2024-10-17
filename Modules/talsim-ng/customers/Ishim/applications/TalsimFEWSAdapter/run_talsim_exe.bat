@@ -1,0 +1,1 @@
+call main.exe ishim.ini

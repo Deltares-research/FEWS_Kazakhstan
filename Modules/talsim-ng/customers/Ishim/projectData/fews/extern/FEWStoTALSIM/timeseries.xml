@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeSeries xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI https://fewsdocs.deltares.nl/schemas/version1.0/pi-schemas/pi_timeseries.xsd" version="1.2">
+    <timeZone>0.0</timeZone>
+    <series>
+        <header>
+            <type>accumulative</type>
+            <locationId>Ishim</locationId>
+            <parameterId>NIE</parameterId>
+            <timeStep unit="second" multiplier="86400"/>
+            <startDate date="2024-08-14" time="00:00:00"/>
+            <endDate date="2024-09-08" time="00:00:00"/>
+            <missVal>-999.0</missVal>
+            <stationName>A016</stationName>
+            <units>mm</units>
+        </header>
+        <event date="2024-08-14" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-15" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-16" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-17" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-18" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-19" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-20" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-21" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-22" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-23" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-24" time="00:00:00" value="0.13" flag="0"/>
+        <event date="2024-08-25" time="00:00:00" value="4.5" flag="0"/>
+        <event date="2024-08-26" time="00:00:00" value="0.93" flag="0"/>
+        <event date="2024-08-27" time="00:00:00" value="1.69" flag="0"/>
+        <event date="2024-08-28" time="00:00:00" value="1.19" flag="0"/>
+        <event date="2024-08-29" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-30" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-31" time="00:00:00" value="1.94" flag="0"/>
+        <event date="2024-09-01" time="00:00:00" value="0.06" flag="0"/>
+        <event date="2024-09-02" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-09-03" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-09-04" time="00:00:00" value="9" flag="0"/>
+        <event date="2024-09-05" time="00:00:00" value="9.62" flag="0"/>
+        <event date="2024-09-06" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-09-07" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-09-08" time="00:00:00" value="2.57" flag="0"/>
+    </series>
+    <series>
+        <header>
+            <type>instantaneous</type>
+            <locationId>Ishim</locationId>
+            <parameterId>TEM</parameterId>
+            <timeStep unit="second" multiplier="86400"/>
+            <startDate date="2024-08-14" time="00:00:00"/>
+            <endDate date="2024-09-08" time="00:00:00"/>
+            <missVal>-999.0</missVal>
+            <stationName>A016</stationName>
+            <units>oC</units>
+        </header>
+        <event date="2024-08-14" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-15" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-16" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-17" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-18" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-19" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-20" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-21" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-22" time="00:00:00" value="0" flag="0"/>
+        <event date="2024-08-23" time="00:00:00" value="13" flag="0"/>
+        <event date="2024-08-24" time="00:00:00" value="15.7" flag="0"/>
+        <event date="2024-08-25" time="00:00:00" value="11.8" flag="0"/>
+        <event date="2024-08-26" time="00:00:00" value="11.2" flag="0"/>
+        <event date="2024-08-27" time="00:00:00" value="14.3" flag="0"/>
+        <event date="2024-08-28" time="00:00:00" value="13.5" flag="0"/>
+        <event date="2024-08-29" time="00:00:00" value="16.4" flag="0"/>
+        <event date="2024-08-30" time="00:00:00" value="17.7" flag="0"/>
+        <event date="2024-08-31" time="00:00:00" value="16.8" flag="0"/>
+        <event date="2024-09-01" time="00:00:00" value="11.8" flag="0"/>
+        <event date="2024-09-02" time="00:00:00" value="13.3" flag="0"/>
+        <event date="2024-09-03" time="00:00:00" value="15.5" flag="0"/>
+        <event date="2024-09-04" time="00:00:00" value="15.4" flag="0"/>
+        <event date="2024-09-05" time="00:00:00" value="7.1" flag="0"/>
+        <event date="2024-09-06" time="00:00:00" value="14" flag="0"/>
+        <event date="2024-09-07" time="00:00:00" value="16.6" flag="0"/>
+        <event date="2024-09-08" time="00:00:00" value="16.6" flag="0"/>
+    </series>
+</TimeSeries>

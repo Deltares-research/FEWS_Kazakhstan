@@ -1,0 +1,16 @@
+*SIMINFO
+*
+[SETTINGS]
+Computer=NB-HUBERTX1
+DBPathLocal=C:\Talsim-ng\customers\Kazakhstan\projectData\hubert\dataBase\
+DBPathNet=\\NB-HUBERTX1\Talsim-ng\customers\Kazakhstan\projectData\hubert\dataBase\
+DBName=hubert_data.mdb
+SystemId=188
+SysVarId=483
+SimId=263
+SystemName=Kazakhstan
+SysVarName=Esil 2 Headwater (Rainfall-Runoff)
+SimName=Test simulation
+User=hubert
+SimRunDescription=Export TALSIM-NG FullClient
+OperationRulesEditMode=0

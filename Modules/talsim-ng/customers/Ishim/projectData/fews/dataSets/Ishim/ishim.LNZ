@@ -1,0 +1,35 @@
+*Land use (*.LNZ)
+*=====================
+[SETTINGS]
+VERSION=2.1
+*
+*|------|--------------------------------------------------------------------|------------------------------|#
+*| ID   | Root depth| Coverage     LAI.Indx    crop     surface      soil    |        Description           |
+*|      | max  |jgg |Cover |jgg | LAI  |jgg |kc  |ky  |Imp | Kst  |BD | pTAW |                              |
+*|------|------|----|------|----|------|----|----|----|----|------|---|------|------------------------------|
+*|  -   |  m   | -  |  %   | -  |  -   | -  |jgg |jgg | %  |      | - |      |              -               |
+*|------|------|----|------|----|------|----|----|----|----|------|---|------|------------------------------|
+ |     1|     1|    |    80|    |     4|    |  1 |    |   0|    25|  0|   0.5|Irrigated cropland            |
+ |     2|     1|    |    80|    |     4|    |  1 |    |   0|    25|  0|   0.5|Rainfed cropland              |
+ |     3|     1|    |    70|    |     4|    |  1 |    |   0|    25|  0|   0.5|Mosaic cropland/vegetation    |
+ |     4|     1|    |    70|    |     4|    |  1 |    |   0|    25|  0|   0.5|Mosaic vegetation/cropland    |
+ |     5|     2|    |    90|    |    10|    |  1 |    |   0|    25|  0|   0.5|Closed to open broadleaved eve|
+ |     6|     2|    |    95|    |    10|    |  1 |    |   0|    25|  0|   0.5|Closed broadleaved deciduous f|
+ |     7|     2|    |    90|    |    10|    |  1 |    |   0|    25|  0|   0.5|Open broadleaved deciduous for|
+ |     8|     2|    |    95|    |    12|    |  1 |    |   0|    25|  0|   0.5|Closed needleleaved evergreen |
+ |     9|     2|    |    95|    |    10|    |  1 |    |   0|    25|  0|   0.5|Open needleleaved deciduous or|
+ |    10|     2|    |    90|    |     8|    |  1 |    |   0|    25|  0|   0.5|Closed to open mixed broadleav|
+ |    11|     1|    |    80|    |     6|    |  1 |    |   0|    25|  0|   0.5|Mosaic Forest-Shrubland/Grassl|
+ |    12|     1|    |    80|    |     6|    |  1 |    |   0|    25|  0|   0.5|Mosaic Grassland/Forest-Shrubl|
+ |    13|     1|    |    70|    |     4|    |  1 |    |   0|    25|  0|   0.5|Closed to open shrubland      |
+ |    14|     1|    |    70|    |     4|    |  1 |    |   0|    25|  0|   0.5|Closed to open grassland      |
+ |    15|   0.8|    |    40|    |     3|    |  1 |    |   0|    25|  0|   0.5|Sparse vegetation             |
+ |    16|   1.5|    |    60|    |    12|    |  1 |    |   0|    25|  0|   0.5|Closed to open broadleaved for|
+ |    17|   1.2|    |    60|    |    12|    |  1 |    |   0|    25|  0|   0.5|Closed broadleaved forest perm|
+ |    18|   0.8|    |    60|    |    12|    |  1 |    |   0|    25|  0|   0.5|Closed to open vegetation regu|
+ |    19|   0.4|    |    20|    |     1|    |  1 |    |  50|    25|  0|   0.5|Artificial areas              |
+ |    20|   0.4|    |    10|    |     1|    |  1 |    |  30|    25|  0|   0.5|Bare areas                    |
+ |    21|     2|    |   100|    |    12|    |  1 |    |   0|    25|  0|   0.5|Water bodies                  |
+ |    22|   0.4|    |    10|    |     1|    |  1 |    |  20|    25|  0|   0.5|Permanent snow and ice        |
+ |    23|   0.4|    |    10|    |     1|    |  1 |    |   0|    25|  0|   0.5|No data                       |
+*|------|------|----|------|----|------|----|----|----|----|------|---|------|------------------------------|

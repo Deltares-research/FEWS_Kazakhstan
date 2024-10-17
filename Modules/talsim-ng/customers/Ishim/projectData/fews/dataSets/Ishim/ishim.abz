@@ -1,0 +1,26 @@
+*SYSTEM vollständig einlesen oder zu Zeitpunkten X schreiben
+*====================================
+
+[SETTINGS]
+Name=ishim              ; Titel
+Option=3                ; 0=nichts, 1=schreiben, 2=lesen, 3=lesen (SimBeginn) schreiben (SimEnde)
+FilenameRead=..\..\projectData\fews\extern\FEWStoTALSIM\ishim.state
+FilenameWrite=..\..\projectData\fews\extern\TALSIMtoFEWS\ishim.state
+
+[WRITE]
+NDate=0                 ; Anzahl der Datumsangaben, zu denen der Zustand geschrieben werden soll
+30.12.2004 00:00
+
+
+[READ]
+Runoff=1                          ; Abflussbildung, 0=nicht gesetzt, 1=gesetzt
+TimeofConcentration=1             ; Abflusskonzentration, 0=nicht gesetzt, 1=gesetzt
+Transport=1                       ; Transportstrecken, 0=nicht gesetzt, 1=gesetzt
+RainHistory=1                     ; Regen-Historie, 0=nicht gesetzt, 1=gesetzt
+Snow=1                            ; Schnee-Historie, 0=nicht gesetzt, 1=gesetzt
+InitVolume=1                      ; Anfangsinhalte, 0=nicht gesetzt, 1=gesetzt
+Cntrl=1                           ; Systemzustände + Zustandsgruppen, 0=nicht gesetzt, 1=gesetzt
+OrdinarySysState=1                ; sonstige Elementezustände, 0=nicht gesetzt, 1=gesetzt
+
+[READWRITE]
+SimEndOffset=1

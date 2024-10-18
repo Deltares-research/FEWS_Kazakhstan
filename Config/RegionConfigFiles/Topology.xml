@@ -158,7 +158,12 @@
 		<groupId>WFlow</groupId>		
 	</nodes>-->
 	<nodes id="Run_Talsim" name="Run Talsim Model">
-		<node id="Run_Talsim_model" name="Running a forecast with the Talsim Model">
+		<node id="Run_Talsim_model_hist" name="Running a historic period with the Talsim Model">
+			<workflowId>Talsim_historic</workflowId>
+			<localRun>true</localRun>
+			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+		</node>
+		<node id="Run_Talsim_model_fore" name="Running a forecast with the Talsim Model">
 			<workflowId>Talsim_forecast</workflowId>
 			<localRun>true</localRun>
 			<showRunApprovedForecastButton>true</showRunApprovedForecastButton>

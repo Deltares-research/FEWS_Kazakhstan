@@ -10,7 +10,7 @@
 			<locationId>A016</locationId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="day" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-10" end="16" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="day" start="-50" end="16" startOverrulable="true" endOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -24,7 +24,7 @@
 			<locationId>A016</locationId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="day" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-10" end="16" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="day" start="-50" end="16" startOverrulable="true" endOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>

@@ -1,2 +1,2 @@
 Config/ModuleDataSetFiles/*.zip filter=lfs diff=lfs merge=lfs -text
-ImportBackup/* filter=lfs diff=lfs merge=lfs -text
+ImportBackup/** filter=lfs diff=lfs merge=lfs -text

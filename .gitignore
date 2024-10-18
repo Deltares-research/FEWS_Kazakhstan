@@ -9,7 +9,7 @@ running
 bin/*
 user_settings.ini
 exportedModuleDataSetFiles.txt
-Import/*
+Import/*/*
 Export/*
 .vs
 ProgramFiles/*

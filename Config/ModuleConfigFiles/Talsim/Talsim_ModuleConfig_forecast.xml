@@ -44,11 +44,12 @@
 		</startUpActivities>
 		<exportActivities>
 			<exportStateActivity>
-				<moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
+				<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
 				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</stateExportDir>
 				<stateSelection>
 					<warmState>
-						<stateSearchPeriod unit="day" start="-1" end="-1" startOverrulable="false"/>
+						<stateSearchPeriod unit="day" start="-31" end="0" startOverrulable="false"/>
+						<coldStateTime value="-32" unit="day"/>
 					</warmState>
 				</stateSelection>
 			</exportStateActivity>
@@ -63,7 +64,7 @@
 						<locationId>A016</locationId>
 						<timeSeriesType>external forecasting</timeSeriesType>
 						<timeStep unit="day"/>
-						<relativeViewPeriod unit="day" start="-1" end="+16" startOverrulable="false" endOverrulable="true" />
+						<relativeViewPeriod unit="day" end="+16" startOverrulable="false" endOverrulable="true" />
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
@@ -74,7 +75,7 @@
 						<locationId>A016</locationId>
 						<timeSeriesType>external forecasting</timeSeriesType>
 						<timeStep unit="day" multiplier="1"/>
-						<relativeViewPeriod unit="day" start="-1" end="+16" startOverrulable="false" endOverrulable="true" />
+						<relativeViewPeriod unit="day" end="+16" startOverrulable="false" endOverrulable="true" />
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>				
 				</timeSeriesSets>

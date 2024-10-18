@@ -11,17 +11,19 @@
 		<xCellSize>500</xCellSize>
 		<yCellSize>500</yCellSize>
 	</regular>
-	<regular locationId="radar">
-		<rows>520</rows>
-		<columns>520</columns>
-		<geoDatum>EPSG:32643</geoDatum>
-		<firstCellCenter>
-			<x>511000.0000000000000000</x>
-			<y>5251000.0000000000000000</y>
-		</firstCellCenter>
-		<xCellSize>1000</xCellSize>
-		<yCellSize>1000</yCellSize>
-	</regular>
+    <regular locationId="radar">
+        <rows>1038</rows>
+        <columns>1038</columns>
+        <geoDatum>EPSG:32643</geoDatum>
+        <firstCellCenter>
+            <x>511673.4652</x>
+            <y>5250503.4298</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>500.0</xCellSize>
+        <yCellSize>500.0</yCellSize>
+    </regular>
+
 	<regular locationId="GFS_world">
 		<rows>361</rows>
 		<columns>720</columns>
@@ -144,15 +146,15 @@
 		<yCellSize>0.08</yCellSize>
 	</regular>
 	<regular locationId="ECMWF_ERA5">
-        <rows>65</rows>
-        <columns>181</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>43.0</x>
-            <y>56.0</y>
-            <z>0.0</z>
-        </firstCellCenter>
-        <xCellSize>0.25</xCellSize>
-        <yCellSize>0.25</yCellSize>
-    </regular>
+		<rows>65</rows>
+		<columns>181</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>43.0</x>
+			<y>56.0</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
 </grids>

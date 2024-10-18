@@ -61,6 +61,9 @@
 			<parameter id="SNOW.cm" name="Snow fall">
 				<shortName>SNOW.cm</shortName>
 			</parameter>
+			<parameter id="SD.forecast" name="Forecasted snow depth">
+				<shortName>SD.forecast</shortName>
+			</parameter>
 		</parameterGroup>
 		<parameterGroup id="Evaporation">
 			<parameterType>accumulative</parameterType>

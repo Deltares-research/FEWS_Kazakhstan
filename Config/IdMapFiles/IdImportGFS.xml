@@ -9,4 +9,5 @@
 	<parameter internal="AirPressure.forecast" external="pressfc"/>
 	<parameter internal="WS.u.forecast" external="ugrd10m"/>
 	<parameter internal="WS.v.forecast" external="vgrd10m"/>
+	<parameter internal="SD.forecast" external="snodsfc"/>
 </idMap>

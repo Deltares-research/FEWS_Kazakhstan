@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
-    <general>
-         <importType>GeoTiff</importType>
-         <folder>$REGION_HOME$/Import/radar</folder>
-         <!--01_10_00_000000000_default.tif-->
-             <fileNameObservationDateTimePattern>yyyyMMdd_HH_mm_ss'_sweep2_radar_rainfall.tif'</fileNameObservationDateTimePattern>
-            <!--20240818_11_30_00_sweep2_radar_rainfall.tif-->
-         <missingValue>-9999</missingValue>
-         <dataFeedId>radar.Precipitation</dataFeedId>
-         </general>
-    <timeSeriesSet>
-        <moduleInstanceId>Import_radar_file</moduleInstanceId>
-        <valueType>grid</valueType>
-        <parameterId>P.obs</parameterId>
-        <locationId>radar</locationId>
-        <timeSeriesType>external historical</timeSeriesType>   
-        <timeStep unit="nonequidistant"/>
-        <readWriteMode>add originals</readWriteMode>
-    </timeSeriesSet>
-</import>
+		<general>
+			<importType>GeoTiff</importType>
+			<folder>$REGION_HOME$/Import/radar</folder>
+			<!--01_10_00_000000000_default.tif-->
+<!--			<fileNameObservationDateTimePattern>yyyyMMdd_HH_mm_ss'_sweep2_radar_rainfall.tif'</fileNameObservationDateTimePattern>-->
+			<fileNameObservationDateTimePattern>HH_mm_ss_yyyyMMdd'_default.tif'</fileNameObservationDateTimePattern>
+			<!--20240818_11_30_00_sweep2_radar_rainfall.tif-->
+			<missingValue>-9999</missingValue>
+			<dataFeedId>radar.Precipitation</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_radar_file</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>radar</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
 </timeSeriesImportRun>

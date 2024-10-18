@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
 	<defaultFilterId>Basins_All</defaultFilterId>
 	<filter id="Kazakhstan">
 		<mapExtentId>Kazakhstan</mapExtentId>
 		<child foreignKey="Meteo_All"/>
 		<child foreignKey="GRDC_All"/>
-		<child foreignKey="Basins_Ensemble"/>
 	</filter>
 	<filter id="Models">
 		<child foreignKey="Basins_All"/>
@@ -40,6 +40,7 @@
 			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -49,6 +50,7 @@
 			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -58,6 +60,7 @@
 			<locationSetId>GSOD_stations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<!--<timeSeriesSet>
@@ -93,9 +96,10 @@
 			<locationSetId>GRDC_stations_shp</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-<!--		<timeSeriesSet>
+		<!--		<timeSeriesSet>
 			<moduleInstanceId>Import_Station</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.obs</parameterId>
@@ -231,25 +235,25 @@
 		</timeSeriesSet>
 	</filter>
 	<filter id="Basins_out" name="Basins result data">
-	<timeSeriesSet>
-		<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
-		<valueType>scalar</valueType>
-		<parameterId>Q.sim</parameterId>
-		<locationSetId>GADM2</locationSetId>
-		<timeSeriesType>simulated historical</timeSeriesType>
-		<timeStep unit="nonequidistant"/>
-		<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
-		<readWriteMode>read complete forecast</readWriteMode>
-	</timeSeriesSet>
-	<timeSeriesSet>
-    <moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
-    <valueType>scalar</valueType>
-    <parameterId>Q.forecast</parameterId>
-    <locationSetId>GADM2</locationSetId>
-    <timeSeriesType>simulated forecasting</timeSeriesType>
-    <timeStep unit="nonequidistant"/>
-    <relativeViewPeriod unit="day" start="0" end="+16" startOverrulable="true"/>
-    <readWriteMode>read complete forecast</readWriteMode>
-</timeSeriesSet>
-</filter>
+		<timeSeriesSet>
+			<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.forecast</parameterId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="0" end="+16" startOverrulable="true"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</filter>
 </filters>

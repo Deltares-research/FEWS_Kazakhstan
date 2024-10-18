@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>grib1</importType>
+			<folder>$IMPORT_FOLDER$/ECMWF_ERA5</folder>
+			<idMapId>IdImportECMWF_ERA5</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<dataFeedId>ECMWF_ERA5</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECMWF_ERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>ECMWF_ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECMWF_ERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PET.obs</parameterId>
+			<locationId>ECMWF_ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECMWF_ERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>ECMWF_ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit unit="K" parameterId="T.obs"/>
+		<externUnit unit="m" parameterId="P.obs"/>
+		<externUnit unit="m" parameterId="PET.obs"/>
+	</import>
+</timeSeriesImportRun>

@@ -9,11 +9,11 @@
 	<locationIcon>
 		<description>Flow measurement sites</description>
 		<iconId>flowgauge</iconId>
-		<locationSetId>all_stations_Flow</locationSetId>
+		<locationSetId>GRDC_stations</locationSetId>
 	</locationIcon>
 	<locationIcon>
 		<description>Water level measurement sites</description>
 		<iconId>hydro_site_data</iconId>
-		<locationSetId>all_stations_Level</locationSetId>
+		<locationSetId>GRDC_stations</locationSetId>
 	</locationIcon>
 </locationIcons>

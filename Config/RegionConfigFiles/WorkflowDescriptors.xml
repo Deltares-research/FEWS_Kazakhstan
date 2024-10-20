@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!--Import & Process workflows-->
-	<workflowDescriptor id="Import_Hydro_Observations" name="Import Hydrological Observations" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="Import_Forecasts" name="Import weather forecasts (GFS)" visible="true" forecast="false" autoApprove="false" allowApprove="false">
 		<cardinalTimeStep timeZone="GMT" unit="day"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="Import_Ensemble_Forecasts" name="Import weather ensembles(GEFS)" visible="true" forecast="false" autoApprove="false" allowApprove="false">
 		<cardinalTimeStep timeZone="GMT" unit="day"/>
 	</workflowDescriptor>
+<workflowDescriptor id="ImportECMWF_ERA5" name="Import ECMWF ERA5 data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="Import_EarthObservation" name="Import satellite data (GPM)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="Import_GRDC" name="Import GRDC station data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="Import_GSOD" name="Import GSOD station data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
@@ -32,6 +32,8 @@
 			<workflowId>Import_Ensemble_Forecasts</workflowId>
 			<workflowId>Import_GSOD</workflowId>
 			<workflowId>Import_OpenMeteo</workflowId>
+			<workflowId>ImportECMWF_ERA5</workflowId>
+
 		</node>
 		<node name="Process">
 			<workflowId>Process_Operational_Grids</workflowId>

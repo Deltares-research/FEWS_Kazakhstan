@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
 	<!--Imports and Process-->
+	<!--Import ECMWF ERA5 reanalysis grid-->
+	<moduleInstanceDescriptor id="ImportECMWF_ERA5">
+		<description>Import ERA5 reanalysis data from ECWMF</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="Import_radar_file">
 	<description>imports TIF files of Radar</description>
 	</moduleInstanceDescriptor>

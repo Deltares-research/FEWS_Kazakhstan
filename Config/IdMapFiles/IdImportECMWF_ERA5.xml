@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="T.obs" internalLocation="ECMWF_ERA5" externalParameter="167" externalLocation="ECMWF_ERA5"/>
+	<map internalParameter="P.obs" internalLocation="ECMWF_ERA5" externalParameter="228" externalLocation="ECMWF_ERA5"/>
+	<map internalParameter="PET.obs" internalLocation="ECMWF_ERA5" externalParameter="251" externalLocation="ECMWF_ERA5"/>
+</idMap>

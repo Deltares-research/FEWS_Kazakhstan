@@ -72,4 +72,10 @@
 		<multiplier>1.94384449</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
+	<unitConversion>
+		<inputUnitType>m</inputUnitType>
+		<outputUnitType>mm</outputUnitType>
+		<multiplier>1000</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
 </unitConversions>

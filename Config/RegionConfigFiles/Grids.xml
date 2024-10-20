@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
-	<regular locationId="radar2">
-		<rows>1038</rows>
-		<columns>1038</columns>
-		<geoDatum>EPSG:32643</geoDatum>
-		<firstCellCenter>
-			<x>511423.465184723725542</x>
-			<y>5250753.429799459874630</y>
-		</firstCellCenter>
-		<xCellSize>500</xCellSize>
-		<yCellSize>500</yCellSize>
-	</regular>
 	<regular locationId="radar">
 		<rows>520</rows>
 		<columns>520</columns>
@@ -22,6 +11,18 @@
 		<xCellSize>1000</xCellSize>
 		<yCellSize>1000</yCellSize>
 	</regular>
+	<regular locationId="ECMWF_ERA5">
+        <rows>65</rows>
+        <columns>181</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>43.0</x>
+            <y>56.0</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.25</xCellSize>
+        <yCellSize>0.25</yCellSize>
+    </regular>
 	<regular locationId="GFS_world">
 		<rows>361</rows>
 		<columns>720</columns>

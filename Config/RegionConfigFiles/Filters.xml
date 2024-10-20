@@ -5,7 +5,6 @@
 		<mapExtentId>Kazakhstan</mapExtentId>
 		<child foreignKey="Meteo_All"/>
 		<child foreignKey="GRDC_All"/>
-		<child foreignKey="Basins_Ensemble"/>
 	</filter>
 	<filter id="Models">
 		<child foreignKey="Basins_All"/>
@@ -95,7 +94,7 @@
 			<timeStep unit="nonequidistant"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-<!--		<timeSeriesSet>
+		<!--		<timeSeriesSet>
 			<moduleInstanceId>Import_Station</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.obs</parameterId>
@@ -231,25 +230,25 @@
 		</timeSeriesSet>
 	</filter>
 	<filter id="Basins_out" name="Basins result data">
-	<timeSeriesSet>
-		<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
-		<valueType>scalar</valueType>
-		<parameterId>Q.sim</parameterId>
-		<locationSetId>GADM2</locationSetId>
-		<timeSeriesType>external historical</timeSeriesType>
-		<timeStep unit="nonequidistant"/>
-		<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
-		<readWriteMode>read complete forecast</readWriteMode>
-	</timeSeriesSet>
-	<timeSeriesSet>
-    <moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
-    <valueType>scalar</valueType>
-    <parameterId>Q.forecast</parameterId>
-    <locationSetId>GADM2</locationSetId>
-    <timeSeriesType>simulated forecasting</timeSeriesType>
-    <timeStep unit="nonequidistant"/>
-    <relativeViewPeriod unit="day" start="0" end="+16" startOverrulable="true"/>
-    <readWriteMode>read complete forecast</readWriteMode>
-</timeSeriesSet>
-</filter>
+		<timeSeriesSet>
+			<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Talsim_ModuleConfig_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.forecast</parameterId>
+			<locationSetId>GADM2</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="0" end="+16" startOverrulable="true"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</filter>
 </filters>

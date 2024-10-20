@@ -62,4 +62,9 @@
 		<y>0</y>
 		<z>0</z>
 	</location>
+		<location id="ECMWF_ERA5" name="ECWMF ERA5 reanalysis data">
+		<shortName>ERA5</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 </locations>

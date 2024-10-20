@@ -236,7 +236,7 @@
 		<valueType>scalar</valueType>
 		<parameterId>Q.sim</parameterId>
 		<locationSetId>GADM2</locationSetId>
-		<timeSeriesType>simulated historical</timeSeriesType>
+		<timeSeriesType>external historical</timeSeriesType>
 		<timeStep unit="nonequidistant"/>
 		<relativeViewPeriod unit="day" start="-31" end="0" startOverrulable="true"/>
 		<readWriteMode>read complete forecast</readWriteMode>

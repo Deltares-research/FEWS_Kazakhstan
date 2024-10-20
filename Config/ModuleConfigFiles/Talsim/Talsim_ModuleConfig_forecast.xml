@@ -48,7 +48,7 @@
 				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</stateExportDir>
 				<stateSelection>
 					<warmState>
-						<stateSearchPeriod unit="day" start="-31" end="0" startOverrulable="false"/>
+						<stateSearchPeriod unit="day" start="-31" end="1" startOverrulable="false"/>
 						<coldStateTime value="-32" unit="day"/>
 					</warmState>
 				</stateSelection>
@@ -81,9 +81,6 @@
 				</timeSeriesSets>
 				<checkMissing>true</checkMissing>
 			</exportTimeSeriesActivity>
-<!--			<exportDataSetActivity>
-				<moduleInstanceId>Talsim_Historic</moduleInstanceId>
-			</exportDataSetActivity>-->
 			<exportRunFileActivity>
 				<exportFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/runinfo.xml</exportFile>
 			</exportRunFileActivity>

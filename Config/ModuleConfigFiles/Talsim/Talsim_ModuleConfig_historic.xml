@@ -41,61 +41,49 @@
 		<exportActivities>
 			<exportStateActivity>
 				<moduleInstanceId>Talsim_ModuleConfig_historic</moduleInstanceId>
-				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM</stateExportDir>
-				<stateConfigFile>outstate.xml</stateConfigFile>
-				<stateLocations type="file">
-					<stateLocation>
-						<readLocation>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/ishim.state</readLocation>
-						<writeLocation>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/ishim.state</writeLocation>
-					</stateLocation>
-				</stateLocations>
-				<!--kijken of outstate op de juiste plek wordt geschreven-->
+				<stateExportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/</stateExportDir>
 				<stateSelection>
 					<warmState>
-						<stateSearchPeriod unit="day" start="-31" end="0" startOverrulable="false"/>
+						<stateSearchPeriod unit="day" start="-31" end="-1" startOverrulable="true"/>
 						<coldStateTime value="-32" unit="day"/>
 					</warmState>
 				</stateSelection>
 			</exportStateActivity>
 			<exportTimeSeriesActivity>
-				<exportFile>timeseries.xml</exportFile>		
+				<exportFile>timeseries.xml</exportFile>
 				<timeSeriesSets>
-				<timeSeriesSet>
-			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.tot</parameterId>
-			<locationId>35188099999</locationId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="day"/>
-			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>T.obs</parameterId>
-			<locationId>35188099999</locationId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="day"/>
-			<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-		</timeSeriesSet>				
+					<timeSeriesSet>
+						<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>P.tot</parameterId>
+						<locationId>35188099999</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>Meteo_Preprocess_Talsim_historic</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>T.obs</parameterId>
+						<locationId>35188099999</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
 				</timeSeriesSets>
 				<checkMissing>true</checkMissing>
 			</exportTimeSeriesActivity>
-<!--			<exportDataSetActivity>
-				<moduleInstanceId>Talsim_Historic</moduleInstanceId>
-			</exportDataSetActivity>-->
 			<exportRunFileActivity>
 				<exportFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/FEWStoTALSIM/runinfo.xml</exportFile>
 			</exportRunFileActivity>
 		</exportActivities>
 		<executeActivities>
 			<executeActivity>
-			<command>
-				<executable>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/run_talsim.bat</executable>
-			</command>
-
+				<command>
+					<executable>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/run_talsim.bat</executable>
+				</command>
 				<logFile>
 					<file>%ROOT_DIR%/talsim-ng/customers/ishim/applications/TalsimFEWSAdapter/log/TalsimFEWSAdapter.log</file>
 					<errorLinePattern>*ERROR*</errorLinePattern>
@@ -108,19 +96,11 @@
 		</executeActivities>
 		<importActivities>
 			<importStateActivity>
-				<!--stateImportDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS</stateImportDir>-->
-				<stateConfigFile>outstate.xml</stateConfigFile>
-	<!--			<stateFile>
-					<importFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/ishim.state</importFile>
-					<relativeExportFile>../FEWStoTALSIM/ishim.state</relativeExportFile>
-				</stateFile>
-				<stateLocation>
-					<readLocation>FEWStoTALSIM/ishim.state</readLocation>
-					<writeLocation>TALSIMtoFEWS/ishim.state</writeLocation>
-				</stateLocation>
-			</stateLocations>-->
-			</importStateActivity>
-			
+	<stateFile>
+		<importFile>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/ishim.state</importFile>
+		<relativeExportFile>../FEWStoTALSIM/ishim.state</relativeExportFile>
+	</stateFile>
+</importStateActivity>
 			<importTimeSeriesActivity>
 				<importFile>talsim_results.xml</importFile>
 				<timeSeriesSets>
@@ -129,7 +109,7 @@
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
 						<locationSetId>GADM2</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -137,9 +117,6 @@
 			</importTimeSeriesActivity>
 		</importActivities>
 		<shutDownActivities>
-			<!--<purgeActivity>
-				<filter>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS/*.xml</filter>
-			</purgeActivity>-->
 			<zipActivity>
 				<sourceDir>%ROOT_DIR%/talsim-ng/customers/ishim/projectData/fews/extern/TALSIMtoFEWS</sourceDir>
 				<destinationZipFile>$REGION_HOME$/warmStates/FEWStoTALSIM.zip</destinationZipFile>

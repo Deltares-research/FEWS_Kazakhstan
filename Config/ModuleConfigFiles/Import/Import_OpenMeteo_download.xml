@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>$REGION_HOME$/Modules/</rootDir>
+		<workDir>%ROOT_DIR%/download_openMeteo</workDir>
+		<exportDir>$REGION_HOME$/Import/OpenMeteo</exportDir>
+		<importDir>$REGION_HOME$/Import/OpenMeteo</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%/DUMP</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/download_openMeteo/download_openMeteo.log</diagnosticFile>
+		<startDateTimeFormat>yyyy-MM-dd</startDateTimeFormat>
+		<endDateTimeFormat>yyyy-MM-dd</endDateTimeFormat>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%WORK_DIR%/download_openmeteo.log</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<executeActivities>
+			<executeActivity>
+			<command>
+				<executable>%WORK_DIR%/download_openmeteo_v2.exe</executable>
+			</command>
+			<arguments>
+				<argument>openmeteo.ini</argument>
+				<argument>$REGION_HOME$/Import/OpenMeteo</argument>
+				<argument>%START_DATE_TIME%</argument><!--start and enddate are not used in forecast-->
+				<argument>forecast</argument>
+			</arguments>
+			<logFile>
+					<file>%WORK_DIR%/download_openmeteo.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<executeActivity>
+			<command>
+				<executable>%WORK_DIR%/download_openmeteo_v2.exe</executable>
+			</command>
+			<arguments>
+				<argument>openmeteo.ini</argument>
+				<argument>$REGION_HOME$/Import/OpenMeteo</argument>
+				<argument>%START_DATE_TIME%</argument><!--start and enddate are not used in forecast-->
+				<argument>historic</argument>
+			</arguments>
+			<logFile>
+					<file>%WORK_DIR%/download_openmeteo.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

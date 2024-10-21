@@ -4,6 +4,7 @@ import json
 import csv
 import os
 import sys
+import requests
 
 # Setup logging configuration
 log_file = sys.argv[5]
@@ -41,6 +42,17 @@ json_data = [
     }
 ]
 
+def fetch_json_data(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Check for HTTP errors
+        logging.info(f"Successfully fetched data from URL: {url}")
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching data from {url}: {e}")
+        return None
+
+
 def round_to_nearest_3_hours(dt):
     # Calculate how many hours to add or subtract to get to the nearest 3-hour mark
     hours_to_nearest_3 = round(dt.hour / 3) * 3
@@ -54,8 +66,22 @@ def round_to_nearest_3_hours(dt):
 
     return rounded_dt
 
+def round_to_nearest_1_hours(dt):
+    # Calculate how many hours to add or subtract to get to the nearest 3-hour mark
+    hours_to_nearest_1 = round(dt.hour / 1) * 1
+    rounded_dt = dt.replace(hour=hours_to_nearest_1 % 24, minute=0, second=0, microsecond=0)
+
+    # Adjust the day if the rounding pushed us to the next or previous day
+    if hours_to_nearest_1 >= 24:
+        rounded_dt += timedelta(days=1)
+    elif hours_to_nearest_1 < 0:
+        rounded_dt -= timedelta(days=1)
+
+    return rounded_dt
+
 # Function to convert JSON to CSV
 def json_to_csv(json_data, csv_file_path):
+    json_data = fetch_json_data(json_data)
     try:
         # Extract keys from the first dictionary as the CSV header
         keys = json_data[0].keys()
@@ -83,10 +109,21 @@ def create_url(base_url, startdate):
             startdate_round = round_to_nearest_3_hours(startdate)
             startdate_formatted = startdate_round.strftime("%Y%m%d")
             starthour_formatted = startdate_round.strftime("%H")
-            url = f"{base_url}?sdate={startdate_formatted}&shour={starthour_formatted}"
-        elif "hydro1d" in base_url or "wrf_48h" in base_url:
+            #url = f"{base_url}?sdate={startdate_formatted}&shour={starthour_formatted}"
+            url = "{0}?sdate={1}&shour={2}".format(base_url, startdate_formatted, starthour_formatted)
+            logging.info(f"URL created {url}")
+        elif "meteo_1h" in base_url:
+            startdate_round = round_to_nearest_1_hours(startdate)
+            startdate_formatted = startdate_round.strftime("%Y%m%d")
+            starthour_formatted = startdate_round.strftime("%H")
+            #url = f"{base_url}?sdate={startdate_formatted}&shour={starthour_formatted}"
+            url = "{0}?sdate={1}&shour={2}".format(base_url, startdate_formatted, starthour_formatted)
+            logging.info(f"URL created {url}")
+        elif "hydro1d" in base_url or "wrf_48h" in base_url or "meteo" in base_url or "hydro" in base_url:
             startdate_formatted = startdate.strftime("%Y%m%d")
-            url = f"{base_url}?sdate={startdate_formatted}"
+            #url = f"{base_url}?sdate={startdate_formatted}"
+            url = "{0}?sdate={1}".format(base_url, startdate_formatted)
+            logging.info(f"URL created {url}")
         else:
             url = base_url
         
@@ -113,6 +150,7 @@ def main():
         else:
             date_format = "%Y%m%d%H%M%S"
             datetime_start = datetime.strptime(startdate, date_format)
+            print(base_url)
             url = create_url(base_url, datetime_start)
             date_file = startdate
         
@@ -130,3 +168,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#http://ecodata.kz:5001/meteo?sdate=20240515
+#http://ecodata.kz:5003/meteo_3h?sdate=20240529&shour=09
+#http://ecodata.kz:5002/hydro?sdate=20240721
+#http://ecodata.kz:5007/meteo_1h?sdate=20240805&shour=04
+
